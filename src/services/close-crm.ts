@@ -36,22 +36,11 @@ export async function searchLeadByEmail(
   return null;
 }
 
-export async function getLeadStatusId(
-  label: string
-): Promise<string | null> {
-  const data = await closeApi("/status/lead/");
-  const status = data.data?.find(
-    (s: any) => s.label.toLowerCase() === label.toLowerCase()
-  );
-  return status?.id || null;
-}
-
 export async function createLead(params: {
   name: string;
   email: string;
   company?: string;
   phone?: string;
-  statusId: string;
 }): Promise<any> {
   const contact: any = {
     name: params.name,
@@ -65,48 +54,64 @@ export async function createLead(params: {
     method: "POST",
     body: JSON.stringify({
       name: params.company || params.name,
-      status_id: params.statusId,
       contacts: [contact],
     }),
   });
 }
 
-export async function updateLeadStatus(
-  leadId: string,
-  statusId: string
-): Promise<any> {
-  return closeApi(`/lead/${leadId}/`, {
-    method: "PUT",
-    body: JSON.stringify({ status_id: statusId }),
-  });
-}
-
-export async function upsertLeadWithMeetingBooked(bookingData: {
+export async function upsertLead(bookingData: {
   name: string;
   email: string;
   company?: string;
   phone?: string;
 }): Promise<{ leadId: string; contactId: string; isNew: boolean }> {
-  const statusId = await getLeadStatusId("Meeting Booked");
-  if (!statusId) {
-    throw new Error(
-      'Close CRM status "Meeting Booked" not found. Please create it in Close CRM settings.'
-    );
-  }
-
   const existing = await searchLeadByEmail(bookingData.email);
 
   if (existing) {
-    await updateLeadStatus(existing.id, statusId);
     const contactId = existing.contacts?.[0]?.id || "";
-    console.log(`Updated existing lead ${existing.id} to "Meeting Booked"`);
+    console.log(`Found existing lead ${existing.id}`);
     return { leadId: existing.id, contactId, isNew: false };
   }
 
-  const newLead = await createLead({ ...bookingData, statusId });
+  const newLead = await createLead(bookingData);
   const contactId = newLead.contacts?.[0]?.id || "";
-  console.log(`Created new lead ${newLead.id} with "Meeting Booked"`);
+  console.log(`Created new lead ${newLead.id}`);
   return { leadId: newLead.id, contactId, isNew: true };
+}
+
+// ── Opportunity management ──
+
+export async function getOpportunityStatusId(
+  label: string
+): Promise<string | null> {
+  const data = await closeApi("/status/opportunity/");
+  const status = data.data?.find(
+    (s: any) => s.label.toLowerCase() === label.toLowerCase()
+  );
+  return status?.id || null;
+}
+
+export async function createOpportunity(params: {
+  leadId: string;
+  contactId: string;
+  note?: string;
+}): Promise<any> {
+  const statusId = await getOpportunityStatusId("Meeting Booked");
+  if (!statusId) {
+    throw new Error(
+      'Close CRM opportunity status "Meeting Booked" not found. Please create it in Close CRM settings.'
+    );
+  }
+
+  return closeApi("/opportunity/", {
+    method: "POST",
+    body: JSON.stringify({
+      lead_id: params.leadId,
+      contact_id: params.contactId,
+      status_id: statusId,
+      note: params.note || "Meeting booked via cal.com automation",
+    }),
+  });
 }
 
 // ── Email sending via Close CRM ──

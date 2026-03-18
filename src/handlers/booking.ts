@@ -1,5 +1,5 @@
 import { config } from "../config";
-import { upsertLeadWithMeetingBooked } from "../services/close-crm";
+import { upsertLead, createOpportunity } from "../services/close-crm";
 import { scheduleEmail, JobPayload } from "../services/scheduler";
 import { sendBookingNotification } from "../services/slack";
 import crypto from "crypto";
@@ -106,15 +106,19 @@ export async function handleBookingCreated(
     `Processing booking for ${data.name} (${data.email}) — "${data.eventTitle}"`
   );
 
-  // Step 1: Upsert lead in Close CRM with "Meeting Booked" status
-  const { leadId, contactId, isNew } = await upsertLeadWithMeetingBooked({
+  // Step 1: Upsert lead in Close CRM
+  const { leadId, contactId, isNew } = await upsertLead({
     name: data.name,
     email: data.email,
     company: data.company,
     phone: data.phone,
   });
 
-  // Step 2: Send Slack notification to #meeting-notifications
+  // Step 2: Create Opportunity with "Meeting Booked" status
+  await createOpportunity({ leadId, contactId });
+  console.log(`Created "Meeting Booked" opportunity on lead ${leadId}`);
+
+  // Step 3: Send Slack notification to #meeting-notifications
   const meetingTimeFormatted = data.meetingTime
     ? new Date(data.meetingTime).toLocaleString("en-US", {
         weekday: "short",
@@ -144,10 +148,10 @@ export async function handleBookingCreated(
     firstName: data.firstName,
   };
 
-  // Step 3: Schedule Email 1 (5 minutes after booking)
+  // Step 4: Schedule Email 1 (5 minutes after booking)
   scheduleEmail("email_1", data.bookingId, jobPayload, config.email1DelayMs);
 
-  // Step 4: Schedule Email 2 (2 hours after booking, will reply in thread)
+  // Step 5: Schedule Email 2 (2 hours after booking, will reply in thread)
   scheduleEmail("email_2", data.bookingId, jobPayload, config.email2DelayMs);
 
   return {
