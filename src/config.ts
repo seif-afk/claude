@@ -8,6 +8,8 @@ export const config = {
   closeApiKey: process.env.CLOSE_API_KEY || "",
   closeSenderEmail: process.env.CLOSE_SENDER_EMAIL || "seif@netswick.com",
   closeSenderName: process.env.CLOSE_SENDER_NAME || "Seif Khalil",
+  slackBotToken: process.env.SLACK_BOT_TOKEN || "",
+  slackChannel: process.env.SLACK_CHANNEL || "#meeting-notifications",
   email1DelayMs: 5 * 60 * 1000, // 5 minutes
   email2DelayMs: 2 * 60 * 60 * 1000, // 2 hours
 };

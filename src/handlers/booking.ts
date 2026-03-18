@@ -1,6 +1,7 @@
 import { config } from "../config";
 import { upsertLeadWithMeetingBooked } from "../services/close-crm";
 import { scheduleEmail, JobPayload } from "../services/scheduler";
+import { sendBookingNotification } from "../services/slack";
 import crypto from "crypto";
 
 interface CalBookingPayload {
@@ -10,6 +11,8 @@ interface CalBookingPayload {
     title: string;
     eventTitle?: string;
     type?: string;
+    startTime?: string;
+    endTime?: string;
     attendees: Array<{
       name: string;
       email: string;
@@ -58,6 +61,8 @@ function extractBookingData(body: CalBookingPayload) {
     firstName: extractFirstName(attendee.name),
     company,
     phone,
+    meetingTime: payload.startTime || undefined,
+    timezone: attendee.timeZone || undefined,
   };
 }
 
@@ -109,6 +114,29 @@ export async function handleBookingCreated(
     phone: data.phone,
   });
 
+  // Step 2: Send Slack notification to #meeting-notifications
+  const meetingTimeFormatted = data.meetingTime
+    ? new Date(data.meetingTime).toLocaleString("en-US", {
+        weekday: "short",
+        month: "short",
+        day: "numeric",
+        hour: "numeric",
+        minute: "2-digit",
+        hour12: true,
+      })
+    : undefined;
+
+  await sendBookingNotification({
+    name: data.name,
+    email: data.email,
+    company: data.company,
+    phone: data.phone,
+    eventTitle: data.eventTitle,
+    meetingTime: meetingTimeFormatted,
+    timezone: data.timezone,
+    isNewLead: isNew,
+  }).catch((err) => console.error("Slack notification failed:", err.message));
+
   const jobPayload: JobPayload = {
     leadId,
     contactId,
@@ -116,14 +144,14 @@ export async function handleBookingCreated(
     firstName: data.firstName,
   };
 
-  // Step 2: Schedule Email 1 (5 minutes after booking)
+  // Step 3: Schedule Email 1 (5 minutes after booking)
   scheduleEmail("email_1", data.bookingId, jobPayload, config.email1DelayMs);
 
-  // Step 3: Schedule Email 2 (2 hours after booking, will reply in thread)
+  // Step 4: Schedule Email 2 (2 hours after booking, will reply in thread)
   scheduleEmail("email_2", data.bookingId, jobPayload, config.email2DelayMs);
 
   return {
     success: true,
-    message: `Lead ${isNew ? "created" : "updated"} (${leadId}). Emails scheduled.`,
+    message: `Lead ${isNew ? "created" : "updated"} (${leadId}). Slack notified. Emails scheduled.`,
   };
 }
