@@ -54,9 +54,9 @@ def add_talking_point(text):
 add_section_header('HOOK')
 add_timestamp('[0:00 - 0:30]')
 
-add_body("My agency works with Swag.com, Imprint Engine, and we've booked almost 500 sales meetings for branded merch companies in three months. Leads from HubSpot, Hilton, Uber, Stripe, Charter Communications which is a $50 billion enterprise.")
+add_body("My agency works with Swag.com, Imprint Engine, and we've booked almost 500 sales meetings for promo companies in three months including leads from HubSpot, Hilton, Uber, Stripe, and Charter Communications.")
 
-add_body("ZoomInfo has been around for years though. Massive database. Thousands of companies use it. So which one actually makes more sense for a branded merch company? I'm going to break down both honestly.")
+add_body("A lot of the promo companies I talk to are either already on ZoomInfo or they're deciding between ZoomInfo and hiring an outbound agency. So I want to give you the honest comparison so you can figure out which one fits your situation.")
 
 add_body("Let's get into it.")
 
@@ -104,17 +104,16 @@ add_section_header('Pros and Cons of an Outbound Agency')
 add_timestamp('[7:30 - 11:00]')
 
 add_body("Pros:")
-add_talking_point("TIME: Someone who's done this thousands of times sets it up faster and better than your team learning from scratch.")
-add_talking_point("MONEY: They skip the testing phase. Every bad campaign you run yourself costs you burned domains, lost sender reputation, and months of nothing. A specialized agency already knows what works.")
-add_talking_point("SKILL GAP: Modern outbound changes every few months. AI tools, deliverability rules, new platforms. Your reps and marketing team aren't keeping up with this. It's a full-time specialty.")
-add_talking_point("SCALE: Your team isn't spending time building the system, so they have bandwidth to handle more leads and actually close them. You get more meetings AND more capacity to convert them. That's how companies scale fast.")
+add_talking_point("Saves you time and money. They already know what works so there's no testing phase. Every failed campaign you run yourself costs burned domains and months of nothing.")
+add_talking_point("Bridges the skill gap. Modern outbound is a full-time specialty. Your reps and marketing team aren't keeping up with it.")
+add_talking_point("Frees up your team to handle more leads and actually close them. More meetings coming in AND more capacity to convert. That compounds.")
 
 add_body("Cons:")
-add_talking_point("You give up some control. Someone else is reaching prospects with your name. A good agency lets you approve everything, but it still requires trust.")
-add_talking_point("Higher monthly cost than a database. You're paying for a team, not just data. Harder to justify for smaller companies.")
-add_talking_point("Closed deals aren't instant. Meetings book fast, but the promo sales cycle is long. ROI takes a few months to show even when the system is working.")
-add_talking_point("Most agencies are bad. If they don't specialize in promo, they'll waste months testing. More on how to pick a good one in a second.")
-add_talking_point("Conflict of interest. If they work with other promo companies, make sure they're not reaching the same prospects for your competitors.")
+add_talking_point("You give up some control over messaging and brand. Requires trust.")
+add_talking_point("Higher monthly cost than a database. Harder to justify for smaller companies.")
+add_talking_point("Meetings book fast but the promo sales cycle is long. ROI takes a few months to show.")
+add_talking_point("Most agencies are bad. If they don't specialize in promo, they waste months.")
+add_talking_point("Conflict of interest if they work with other promo companies. Make sure they're not hitting the same prospects.")
 
 # ============ WHO EACH IS BEST FOR ============
 add_section_header('Who Each One Is Best For')
