@@ -75,22 +75,21 @@ add_talking_point("It doesn't send the emails. Doesn't write the messaging. Does
 add_section_header('What An Outbound Agency Does')
 add_timestamp('[2:00 - 5:00]')
 
-add_body("Walk through this linearly from start to finish:")
+add_body("The simplest way to understand it is to walk through it start to finish:")
 
-add_talking_point("RESEARCH: They start by analyzing your past clients. Which industries spent the most, what company sizes, what use cases drove those purchases. Trade shows? Onboarding kits? Corporate gifting? They find the pattern in who bought from you repeatedly and spent the most.")
-add_talking_point("TRENDING PRODUCTS: Then they research what products are trending in those industries right now. So when they reach out on your behalf, they're offering a specific Carhartt jacket or Yeti Rambler, not 'we do branded merch.'")
-add_talking_point("LIST BUILDING: They build the prospect list using B2B databases. Usually cheaper and better ones than ZoomInfo like Prospeo or Apollo.")
-add_talking_point("BUYING SIGNALS: Then they run AI agents across the entire list to find which companies have upcoming events, which ones are hiring in bulk, which ones just got funded, which ones opened a new office. So they're only reaching the companies that actually have a reason to buy promo right now. Not blasting 10,000 random contacts.")
-add_talking_point("INFRASTRUCTURE: They set up the entire infrastructure for doing outreach at scale across multiple channels.")
+add_talking_point("They do the research to figure out who you should be targeting and what kind of offer to reach out with. Looking at your past clients, your best customers, your industry, and building a strategy around that.")
+add_talking_point("They build the prospect lists for you using B2B databases and other tools to find the right companies and decision makers.")
+add_talking_point("They figure out which of those prospects are more likely to need promo right now versus eventually, so the outreach is going to the right people at the right time.")
+add_talking_point("They set up the entire infrastructure for doing outreach at scale. This is the part most people underestimate.")
 
-add_body("For email: setting up 50+ secondary domains, a hundred inboxes, warming everything up with AI for two weeks so Google and Outlook trust the accounts. Using a dedicated cold email tool, not HubSpot or Outlook.")
-add_body("For LinkedIn: setting up multiple accounts, connecting an automation tool that sends personalized connection requests and messages at volume.")
-add_body("For cold calling: getting a power dialer set up and optimizing for high connection rates with AI voicemail detection, area code matching so your number looks local, and auto-skipping dead lines.")
+add_body("For email: that means setting up dozens of secondary domains, hundreds of inboxes, warming everything up with AI so the emails actually land in the inbox. Using dedicated sending tools, not your CRM.")
+add_body("For LinkedIn: setting up multiple accounts, connecting automation tools that send personalized connection requests and messages at volume.")
+add_body("For cold calling: getting a power dialer set up with AI voicemail detection, area code matching so your number looks local, and auto-skipping dead lines.")
 
-add_talking_point("MESSAGING: They write the outreach copy. Specific product ideas tied to the prospect's use case and buying signal. Positioned as a creative partner, not a vendor asking them to browse a catalog.")
-add_talking_point("LEAD MANAGEMENT: When someone responds positively, the agency handles the back and forth. They call interested leads within minutes, qualify them, and book the meeting directly on your salesperson's calendar.")
-add_talking_point("NURTURING: Before the meeting, they send the prospect case studies, a catalog, social proof. So by the time your salesperson gets on the call, the prospect already knows your company and is ready to have a real conversation.")
-add_talking_point("Your salesperson just shows up and closes. That's the entire value chain from research to closed deal.")
+add_talking_point("They write all the outreach messaging for you and manage the campaigns day to day.")
+add_talking_point("When someone responds with interest, the agency handles the back and forth, qualifies them, and books the meeting directly on your salesperson's calendar.")
+add_talking_point("Before the meeting, they send the prospect relevant materials so by the time your salesperson gets on the call, the prospect already has context and is ready for a real conversation.")
+add_talking_point("Your salesperson just shows up and closes. That's the whole thing from research to booked meeting.")
 
 # ============ PROS AND CONS OF ZOOMINFO ============
 add_section_header('Pros and Cons of ZoomInfo')
