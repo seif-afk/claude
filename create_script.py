@@ -52,13 +52,13 @@ def add_talking_point(text):
 
 # ============ HOOK ============
 add_section_header('HOOK')
-add_timestamp('[0:00 - 0:25]')
+add_timestamp('[0:00 - 0:30]')
 
-add_body("My agency has booked almost 500 sales meetings for branded merch companies in the past three months. Including getting leads from HubSpot, Hilton, Uber, Stripe, and Charter Communications, which is a $50 billion enterprise.")
+add_body("So my agency works with companies like Swag.com and Imprint Engine, and we've booked almost 500 sales meetings for branded merch companies in the past three months. Including leads from HubSpot, Hilton, Uber, Stripe, and Charter Communications, which is a $50 billion enterprise.")
 
-add_body("I've also had clients come to me after spending $15,000 to $30,000 a year on ZoomInfo and getting almost nothing from it.")
+add_body("At the same time, ZoomInfo has been around for years. It's one of the most well-known sales tools in B2B. Thousands of companies use it. It has a massive database. And a lot of promo companies swear by it.")
 
-add_body("So today I'm going to break down both options honestly. What each one is, the pros and cons, and which one makes sense depending on your company size.")
+add_body("So which one actually makes more sense for a branded merch company? I'm going to break down both options. What each one is, the pros and cons, and which one fits depending on your company size.")
 
 add_body("Let's get into it.")
 
@@ -75,20 +75,14 @@ add_talking_point("It doesn't send the emails. Doesn't write the messaging. Does
 add_section_header('What An Outbound Agency Does')
 add_timestamp('[2:00 - 5:00]')
 
-add_body("The simplest way to understand it is to walk through it start to finish:")
+add_body("Now I want to be clear. This is what a full-service outbound agency does. Not all agencies do all of this. Some just send you leads and call it a day. But a proper full-service one handles everything from start to finish:")
 
-add_talking_point("They do the research to figure out who you should be targeting and what kind of offer to reach out with. Looking at your past clients, your best customers, your industry, and building a strategy around that.")
-add_talking_point("They build the prospect lists for you using B2B databases and other tools to find the right companies and decision makers.")
-add_talking_point("They figure out which of those prospects are more likely to need promo right now versus eventually, so the outreach is going to the right people at the right time.")
-add_talking_point("They set up the entire infrastructure for doing outreach at scale. This is the part most people underestimate.")
-
-add_body("For email: that means setting up dozens of secondary domains, hundreds of inboxes, warming everything up with AI so the emails actually land in the inbox. Using dedicated sending tools, not your CRM.")
-add_body("For LinkedIn: setting up multiple accounts, connecting automation tools that send personalized connection requests and messages at volume.")
-add_body("For cold calling: getting a power dialer set up with AI voicemail detection, area code matching so your number looks local, and auto-skipping dead lines.")
-
-add_talking_point("They write all the outreach messaging for you and manage the campaigns day to day.")
-add_talking_point("When someone responds with interest, the agency handles the back and forth, qualifies them, and books the meeting directly on your salesperson's calendar.")
-add_talking_point("Before the meeting, they send the prospect relevant materials so by the time your salesperson gets on the call, the prospect already has context and is ready for a real conversation.")
+add_talking_point("They do the research to figure out who you should be targeting and what offer to reach out with. Looking at your past clients, your industry, building a strategy around that.")
+add_talking_point("They build the prospect lists using B2B databases and tools to find the right companies and decision makers.")
+add_talking_point("They figure out which prospects are more likely to need promo right now versus eventually, so the outreach goes to the right people at the right time.")
+add_talking_point("They set up the infrastructure for doing outreach at scale across email, LinkedIn, and calling. Domains, inboxes, warm-up, automation tools, power dialers, the whole technical setup that most teams don't know how to build.")
+add_talking_point("They write the messaging, manage campaigns daily, handle replies, qualify interested leads, and book the meeting directly on your salesperson's calendar.")
+add_talking_point("Before the meeting, they send the prospect relevant materials so they have context going in.")
 add_talking_point("Your salesperson just shows up and closes. That's the whole thing from research to booked meeting.")
 
 # ============ PROS AND CONS OF ZOOMINFO ============
@@ -136,12 +130,11 @@ add_body("$2M to $100M in revenue:")
 add_talking_point("This is where an outbound agency wins clearly.")
 add_talking_point("Your sales reps have become account managers. They service existing clients, handle reorders, chase renewals. They're not prospecting and they won't start.")
 add_talking_point("Your marketing team is stretched across website, trade shows, social media, catalogs. They can't absorb running a daily outreach operation on top of everything else.")
-add_talking_point("The other option is hiring a go-to-market engineer internally. Someone who knows all the AI tools, the infrastructure, the messaging, the deliverability. That person is going to cost you above $10K a month in salary alone. Which is the same or more than an agency. Except the agency comes with the tools, the systems, the proven playbook, and a team. The internal hire comes with a learning curve and no guarantee they know your industry.")
+add_talking_point("The other option is hiring a GTM engineer internally. But that's not just a $10K+ monthly salary. It's payroll taxes, benefits, medical, training, management time, and the risk that they leave in six months and you start over. All in you're probably looking at $13K-$15K a month for one person. An agency costs less than that and comes with a full team, the tools already paid for, and a proven system. No ramp-up time.")
 add_talking_point("At this revenue level the math works. If an agency books you 15-20 qualified meetings a month and you close even a couple into accounts spending $50K-$100K a year, the return pays for the service many times over.")
 
 add_body("Above $100M in revenue:")
-add_talking_point("At this size you probably have internal marketing teams, SDR teams, demand gen people. Hiring a GTM engineer or building an internal outbound function makes more sense here because you have the budget and infrastructure to support it.")
-add_talking_point("You might still use an agency for specific campaigns or new markets. But you have options that a $10M company doesn't.")
+add_talking_point("This is where hiring a GTM engineer internally starts to make sense. You have the budget to absorb the full cost of a senior hire, the infrastructure to support them, and enough volume to justify a dedicated person. An agency can still add value for specific campaigns or new markets, but at this size building it in-house is a real option.")
 
 # ============ HOW TO PICK AN AGENCY ============
 add_section_header('How To Pick The Right Agency')
@@ -159,11 +152,7 @@ add_talking_point("They handle the full funnel. Research, infrastructure, messag
 add_section_header('OUTRO')
 add_timestamp('[15:30 - 16:00]')
 
-add_body("So that's the honest breakdown. ZoomInfo gives you contacts. An outbound agency gives you meetings. Both have their place depending on where you are as a company.")
-
-add_body("The outbound agency that ticks all of those boxes is Netswick. It's my company. We specialize fully in branded merch outbound, we work with leaders like Swag.com and Imprint Engine, and we've booked almost 500 meetings for promo companies in just the last three months.")
-
-add_body("If you want a custom outbound strategy built for your branded merch company, you can book a call with me below.")
+add_body("Netswick is that type of agency. If you want a custom outbound strategy built for your branded merch company, book a call with me below.")
 
 add_body("Subscribe for more breakdowns like this. Peace.")
 
