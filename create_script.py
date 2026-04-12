@@ -54,11 +54,9 @@ def add_talking_point(text):
 add_section_header('HOOK')
 add_timestamp('[0:00 - 0:30]')
 
-add_body("So my agency works with companies like Swag.com and Imprint Engine, and we've booked almost 500 sales meetings for branded merch companies in the past three months. Including leads from HubSpot, Hilton, Uber, Stripe, and Charter Communications, which is a $50 billion enterprise.")
+add_body("My agency works with Swag.com, Imprint Engine, and we've booked almost 500 sales meetings for branded merch companies in three months. Leads from HubSpot, Hilton, Uber, Stripe, Charter Communications which is a $50 billion enterprise.")
 
-add_body("At the same time, ZoomInfo has been around for years. It's one of the most well-known sales tools in B2B. Thousands of companies use it. It has a massive database. And a lot of promo companies swear by it.")
-
-add_body("So which one actually makes more sense for a branded merch company? I'm going to break down both options. What each one is, the pros and cons, and which one fits depending on your company size.")
+add_body("ZoomInfo has been around for years though. Massive database. Thousands of companies use it. So which one actually makes more sense for a branded merch company? I'm going to break down both honestly.")
 
 add_body("Let's get into it.")
 
@@ -90,63 +88,60 @@ add_section_header('Pros and Cons of ZoomInfo')
 add_timestamp('[5:00 - 7:30]')
 
 add_body("Pros:")
-add_talking_point("You own the data. Export the contacts, they're yours forever, use them across any tool.")
-add_talking_point("Full control over messaging and brand. Nobody is emailing prospects with your company name unless you're the one writing it.")
-add_talking_point("Can be cheaper than an agency IF you already have a sales team that knows how to prospect and set up infrastructure. Big if.")
-add_talking_point("Secondary uses beyond outreach: enriching CRM data, researching companies before meetings, keeping contact info fresh.")
+add_talking_point("You own the data. Export the contacts, yours forever, use them anywhere.")
+add_talking_point("Full control over messaging and brand. Nobody emails prospects with your name unless you wrote it.")
+add_talking_point("Can be cheaper than an agency if you already have a team that knows how to prospect. Big if.")
+add_talking_point("Secondary uses: enriching CRM data, researching companies before meetings.")
 
 add_body("Cons:")
-add_talking_point("Data quality is not great. People change jobs, emails go dead, numbers disconnect. One prospect told me he found contacts on ZoomInfo who had retired, sold their business, or passed away. Extreme example but the general problem is real. A lot of the data is stale.")
-add_talking_point("It gives you contacts but zero system. You still need to figure out infrastructure, messaging, deliverability, follow-ups, calling, booking. If your team doesn't know how to run cold outreach, the data sits in a spreadsheet and nothing happens.")
-add_talking_point("Example: a promo company sent 5,000 emails from ZoomInfo contacts and booked 3 meetings. The data wasn't the problem. Generic messaging, no buying signals, sent from their main domain through HubSpot, most of it landed in spam.")
-add_talking_point("It's overpriced for what it is. Newer databases like Prospeo, Apollo, Ocean.io offer comparable or better data at a fraction of the cost. So even if you want a database, ZoomInfo might not be the best value.")
+add_talking_point("Data quality is not great. People change jobs, emails go dead. One prospect told me he found contacts who had retired or passed away. A lot of the data is stale.")
+add_talking_point("It gives you contacts but zero system. You still need infrastructure, messaging, deliverability, everything. If your team can't run cold outreach, the data sits in a spreadsheet.")
+add_talking_point("A promo company sent 5,000 emails from ZoomInfo contacts and booked 3 meetings. Generic messaging, no targeting, sent from HubSpot. Landed in spam.")
+add_talking_point("It's overpriced. Prospeo, Apollo, Ocean.io offer comparable data at a fraction of the cost.")
 
 # ============ PROS AND CONS OF OUTBOUND AGENCY ============
 add_section_header('Pros and Cons of an Outbound Agency')
 add_timestamp('[7:30 - 11:00]')
 
 add_body("Pros:")
-add_talking_point("TIME: They save you massive amounts of time. Your team doesn't have to learn how to set up email infrastructure, configure domains, write cold outreach copy, manage campaigns daily. Someone who's done this thousands of times is going to set it up faster and better than someone learning from scratch.")
-add_talking_point("MONEY: They save you the wasted money you'd spend testing and failing on your own. Every bad campaign you run yourself costs you in burned domains, lost sender reputation, and months of no results. An agency that specializes in your space skips the testing phase because they already know what works.")
-add_talking_point("SKILL GAP: The knowledge required to run modern outbound changes every few months. AI tools, deliverability rules, new platforms. Your reps and marketing team aren't going to keep up with this. It's a full-time specialty.")
-add_talking_point("SCALE: The biggest one. Because your team is not spending time building and managing the outreach system, they now have time to handle MORE leads. You're not just getting leads with less work. You're freeing up your salespeople to actually sell. So you get more meetings AND your team has more bandwidth to close them. That compounds. That's how companies scale fast.")
-add_talking_point("A specialized agency knows what works in promo specifically. No three-month testing phase. They plug you into a proven system and you see results from week one.")
+add_talking_point("TIME: Someone who's done this thousands of times sets it up faster and better than your team learning from scratch.")
+add_talking_point("MONEY: They skip the testing phase. Every bad campaign you run yourself costs you burned domains, lost sender reputation, and months of nothing. A specialized agency already knows what works.")
+add_talking_point("SKILL GAP: Modern outbound changes every few months. AI tools, deliverability rules, new platforms. Your reps and marketing team aren't keeping up with this. It's a full-time specialty.")
+add_talking_point("SCALE: Your team isn't spending time building the system, so they have bandwidth to handle more leads and actually close them. You get more meetings AND more capacity to convert them. That's how companies scale fast.")
 
 add_body("Cons:")
-add_talking_point("You give up some control. Someone else is reaching prospects with your company name. If the messaging is off or the tone doesn't match your brand, it reflects on you. A good agency lets you approve everything, but it still requires trust.")
-add_talking_point("Higher monthly cost than a database subscription. You're paying for a team, not just data access. For smaller companies that fee can be hard to justify early on.")
-add_talking_point("Results in terms of closed deals aren't instant. You'll see meetings booked quickly, often in the first week or two. But the promo sales cycle is long. Someone might love your stuff on the call and not place their first order for three to six months. ROI takes time to show on the P&L even when the system is working.")
-add_talking_point("Most agencies are bad. If they don't specialize in promo, they'll waste months. If they lock you into long contracts before proving anything, red flag. More on how to pick a good one in a second.")
-add_talking_point("Conflict of interest. If they work with other promo companies, you need to make sure they're not reaching the same prospects for your competitors.")
+add_talking_point("You give up some control. Someone else is reaching prospects with your name. A good agency lets you approve everything, but it still requires trust.")
+add_talking_point("Higher monthly cost than a database. You're paying for a team, not just data. Harder to justify for smaller companies.")
+add_talking_point("Closed deals aren't instant. Meetings book fast, but the promo sales cycle is long. ROI takes a few months to show even when the system is working.")
+add_talking_point("Most agencies are bad. If they don't specialize in promo, they'll waste months testing. More on how to pick a good one in a second.")
+add_talking_point("Conflict of interest. If they work with other promo companies, make sure they're not reaching the same prospects for your competitors.")
 
 # ============ WHO EACH IS BEST FOR ============
 add_section_header('Who Each One Is Best For')
 add_timestamp('[11:00 - 14:00]')
 
-add_body("Under $2M in revenue:")
-add_talking_point("A database is probably the right move at this size. Not ZoomInfo though. Apollo or Prospeo for a tenth of the price. Learn Smartlead. Set up your own domains. Write your own copy. You'll make mistakes, takes a few months, but the budget might not be there for an agency yet.")
+add_body("Under $2M:")
+add_talking_point("Database is the right move. Not ZoomInfo though. Apollo or Prospeo for a tenth of the price. Learn Smartlead. DIY it. Budget probably isn't there for an agency yet.")
 
-add_body("$2M to $100M in revenue:")
-add_talking_point("This is where an outbound agency wins clearly.")
-add_talking_point("Your sales reps have become account managers. They service existing clients, handle reorders, chase renewals. They're not prospecting and they won't start.")
-add_talking_point("Your marketing team is stretched across website, trade shows, social media, catalogs. They can't absorb running a daily outreach operation on top of everything else.")
-add_talking_point("The other option is hiring a GTM engineer internally. But that's not just a $10K+ monthly salary. It's payroll taxes, benefits, medical, training, management time, and the risk that they leave in six months and you start over. All in you're probably looking at $13K-$15K a month for one person. An agency costs less than that and comes with a full team, the tools already paid for, and a proven system. No ramp-up time.")
-add_talking_point("At this revenue level the math works. If an agency books you 15-20 qualified meetings a month and you close even a couple into accounts spending $50K-$100K a year, the return pays for the service many times over.")
+add_body("$2M to $100M:")
+add_talking_point("Outbound agency wins. Your reps have become account managers. Your marketing team is stretched. Neither is going to build and run a daily outreach operation.")
+add_talking_point("You could hire a GTM engineer internally. But it's not just salary. It's payroll taxes, benefits, medical, training, management, and the risk they leave in six months. All in, $13K-$15K a month for one person. An agency costs less and comes with a full team, tools included, proven system, no ramp-up.")
+add_talking_point("If an agency books you 15-20 meetings a month and you close a couple into $50K-$100K annual accounts, the return pays for the service many times over.")
 
-add_body("Above $100M in revenue:")
-add_talking_point("This is where hiring a GTM engineer internally starts to make sense. You have the budget to absorb the full cost of a senior hire, the infrastructure to support them, and enough volume to justify a dedicated person. An agency can still add value for specific campaigns or new markets, but at this size building it in-house is a real option.")
+add_body("Above $100M:")
+add_talking_point("Hiring a GTM engineer in-house makes sense at this size. You have the budget, infrastructure, and volume to justify it. An agency can still help with specific campaigns but building internally is a real option here.")
 
 # ============ HOW TO PICK AN AGENCY ============
 add_section_header('How To Pick The Right Agency')
 add_timestamp('[14:00 - 15:30]')
 
-add_talking_point("They specialize in promo. Not dentists and SaaS on the side. Full promo specialization. If they don't know the industry, they're going to waste months testing angles that someone specialized already knows don't work.")
-add_talking_point("Short commitment. You should be able to see results within the first month. If they want 6-12 months upfront before proving anything, walk away.")
-add_talking_point("They guarantee a specific number of meetings, not just leads. Leads are vanity. Meetings are what fills your pipeline. They should be able to tell you exactly how many qualified meetings to expect.")
-add_talking_point("The ROI should map out to at least 10x on your investment with them. If they can't walk you through this math on a call and show you exactly how the numbers work based on your average deal size, that's a red flag.")
-add_talking_point("They have real case studies. Not 'we sent 50,000 emails.' Actual qualified meetings booked and deals closed for companies similar to yours.")
-add_talking_point("They should be a smaller, leaner team. Not a massive company that signs you up and hands you off to some random account manager. You want people who are heavily focused on your account and deeply specialized in what they do.")
-add_talking_point("They handle the full funnel. Research, infrastructure, messaging, replies, calling, booking, nurturing. If they just hand you interested leads and say good luck, that's ZoomInfo with a markup.")
+add_talking_point("They specialize in promo. If they don't know the industry, they'll waste months testing what a specialized agency already knows.")
+add_talking_point("Short commitment. Results within the first month. If they want 6-12 months upfront, walk away.")
+add_talking_point("They guarantee meetings, not just leads. They should tell you exactly how many qualified meetings to expect.")
+add_talking_point("ROI maps out to at least 10x your investment. If they can't walk you through the math based on your deal size, red flag.")
+add_talking_point("Real case studies. Actual meetings booked and deals closed for companies like yours. Not 'we sent 50,000 emails.'")
+add_talking_point("Smaller, leaner team. Not a massive company that hands you off to a random account manager. You want people heavily focused on your account.")
+add_talking_point("Full funnel. Research, infrastructure, messaging, replies, calling, booking, nurturing. If they just hand you leads and say good luck, that's ZoomInfo with a markup.")
 
 # ============ OUTRO ============
 add_section_header('OUTRO')
