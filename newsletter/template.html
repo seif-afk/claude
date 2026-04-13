@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>{{TITLE}}</title>
+</head>
+<body style="margin:0; padding:0; background-color:#07080F; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif; color:#E2E4EA; -webkit-font-smoothing:antialiased;">
+
+<!-- OUTER WRAPPER -->
+<table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" style="background-color:#07080F;">
+<tr><td align="center" style="padding:0;">
+
+<!-- MAIN CONTAINER 600px -->
+<table role="presentation" width="600" cellpadding="0" cellspacing="0" border="0" style="max-width:600px; width:100%; margin:0 auto;">
+
+<!-- ============================================ -->
+<!-- TOP GRADIENT ACCENT BAR                      -->
+<!-- ============================================ -->
+<tr><td style="height:4px; background:linear-gradient(90deg, #0044FF 0%, #00BFFF 50%, #0044FF 100%); font-size:0; line-height:0;">&nbsp;</td></tr>
+
+<!-- ============================================ -->
+<!-- HEADER: Logo + Newsletter Name               -->
+<!-- ============================================ -->
+<tr><td style="background-color:#0B0E19; padding:24px 32px 20px 32px;">
+  <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tr>
+    <td width="44" valign="middle">
+      <!-- LOGO: Replace {{LOGO_URL}} with your hosted transparent PNG -->
+      <img src="{{LOGO_URL}}" alt="Netswick" width="44" height="44" style="display:block; border:0; border-radius:10px;" />
+    </td>
+    <td valign="middle" style="padding-left:14px;">
+      <span style="font-size:20px; font-weight:700; color:#FFFFFF; letter-spacing:-0.5px;">netswick</span>
+    </td>
+    <td align="right" valign="middle">
+      <span style="font-size:12px; color:#5A6380; letter-spacing:1px; text-transform:uppercase;">{{ISSUE_LABEL}}</span>
+    </td>
+  </tr>
+  </table>
+</td></tr>
+
+<!-- Subtle separator line -->
+<tr><td style="background-color:#0B0E19; padding:0 32px;">
+  <div style="height:1px; background:linear-gradient(90deg, transparent 0%, #1A2040 20%, #1A2040 80%, transparent 100%);"></div>
+</td></tr>
+
+<!-- ============================================ -->
+<!-- HERO SECTION                                 -->
+<!-- ============================================ -->
+<tr><td style="background-color:#0B0E19; padding:40px 32px 16px 32px;">
+  <!-- Date / Edition tag -->
+  <table role="presentation" cellpadding="0" cellspacing="0" border="0">
+  <tr><td style="background-color:#0044FF; background:linear-gradient(135deg, #0044FF, #00BFFF); border-radius:20px; padding:5px 14px;">
+    <span style="font-size:11px; font-weight:600; color:#FFFFFF; letter-spacing:0.5px; text-transform:uppercase;">{{DATE_TAG}}</span>
+  </td></tr>
+  </table>
+</td></tr>
+
+<tr><td style="background-color:#0B0E19; padding:8px 32px 12px 32px;">
+  <!-- HERO HEADLINE — DynaPuff-inspired (bold, rounded fallbacks) -->
+  <h1 style="margin:0; padding:0; font-family:'Trebuchet MS', 'Arial Rounded MT Bold', 'Nunito', sans-serif; font-size:34px; font-weight:800; line-height:1.15; color:#FFFFFF; letter-spacing:-1px;">
+    {{HERO_HEADLINE}}
+  </h1>
+</td></tr>
+
+<tr><td style="background-color:#0B0E19; padding:0 32px 32px 32px;">
+  <p style="margin:0; font-size:16px; line-height:1.6; color:#8A90A5;">
+    {{HERO_SUBTITLE}}
+  </p>
+</td></tr>
+
+<!-- HERO SVG ILLUSTRATION -->
+<tr><td style="background-color:#0B0E19; padding:0 32px 32px 32px;">
+  <div style="background-color:#0F1225; border:1px solid #1A2040; border-radius:16px; overflow:hidden; text-align:center;">
+    <!-- Replace with hosted SVG/PNG or use inline SVG -->
+    {{HERO_IMAGE}}
+  </div>
+</td></tr>
+
+<!-- ============================================ -->
+<!-- MAIN ARTICLE                                 -->
+<!-- ============================================ -->
+<tr><td style="background-color:#0B0E19; padding:0 32px 8px 32px;">
+  <!-- Section label with blue left border -->
+  <div style="border-left:3px solid #0044FF; padding-left:14px;">
+    <span style="font-size:11px; font-weight:700; color:#0088FF; letter-spacing:1.5px; text-transform:uppercase;">This Week's Insight</span>
+  </div>
+</td></tr>
+
+<tr><td style="background-color:#0B0E19; padding:8px 32px 32px 32px;">
+  <h2 style="margin:0 0 16px 0; font-family:'Trebuchet MS', 'Arial Rounded MT Bold', sans-serif; font-size:24px; font-weight:700; color:#FFFFFF; letter-spacing:-0.5px; line-height:1.25;">
+    {{ARTICLE_TITLE}}
+  </h2>
+  <div style="font-size:16px; line-height:1.75; color:#C0C4D4;">
+    {{ARTICLE_BODY}}
+  </div>
+</td></tr>
+
+<!-- ============================================ -->
+<!-- KEY TAKEAWAYS — 3 CARDS                      -->
+<!-- ============================================ -->
+<tr><td style="background-color:#0B0E19; padding:0 32px 8px 32px;">
+  <div style="border-left:3px solid #00BFFF; padding-left:14px;">
+    <span style="font-size:11px; font-weight:700; color:#00BFFF; letter-spacing:1.5px; text-transform:uppercase;">Key Takeaways</span>
+  </div>
+</td></tr>
+
+<tr><td style="background-color:#0B0E19; padding:8px 32px 32px 32px;">
+  <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0">
+
+    <!-- Takeaway Card 1 -->
+    <tr><td style="padding-bottom:12px;">
+      <div style="background-color:#0F1225; border:1px solid #1A2040; border-radius:12px; padding:20px 22px;">
+        <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td width="42" valign="top">
+            <div style="width:36px; height:36px; border-radius:10px; background:linear-gradient(135deg, #0044FF, #0066FF); text-align:center; line-height:36px; font-size:16px; font-weight:700; color:#FFFFFF;">1</div>
+          </td>
+          <td valign="top" style="padding-left:14px;">
+            <p style="margin:0 0 4px 0; font-size:15px; font-weight:600; color:#FFFFFF;">{{TAKEAWAY_1_TITLE}}</p>
+            <p style="margin:0; font-size:14px; line-height:1.55; color:#8A90A5;">{{TAKEAWAY_1_TEXT}}</p>
+          </td>
+        </tr>
+        </table>
+      </div>
+    </td></tr>
+
+    <!-- Takeaway Card 2 -->
+    <tr><td style="padding-bottom:12px;">
+      <div style="background-color:#0F1225; border:1px solid #1A2040; border-radius:12px; padding:20px 22px;">
+        <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td width="42" valign="top">
+            <div style="width:36px; height:36px; border-radius:10px; background:linear-gradient(135deg, #0055FF, #00AAFF); text-align:center; line-height:36px; font-size:16px; font-weight:700; color:#FFFFFF;">2</div>
+          </td>
+          <td valign="top" style="padding-left:14px;">
+            <p style="margin:0 0 4px 0; font-size:15px; font-weight:600; color:#FFFFFF;">{{TAKEAWAY_2_TITLE}}</p>
+            <p style="margin:0; font-size:14px; line-height:1.55; color:#8A90A5;">{{TAKEAWAY_2_TEXT}}</p>
+          </td>
+        </tr>
+        </table>
+      </div>
+    </td></tr>
+
+    <!-- Takeaway Card 3 -->
+    <tr><td>
+      <div style="background-color:#0F1225; border:1px solid #1A2040; border-radius:12px; padding:20px 22px;">
+        <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td width="42" valign="top">
+            <div style="width:36px; height:36px; border-radius:10px; background:linear-gradient(135deg, #0088FF, #00BFFF); text-align:center; line-height:36px; font-size:16px; font-weight:700; color:#FFFFFF;">3</div>
+          </td>
+          <td valign="top" style="padding-left:14px;">
+            <p style="margin:0 0 4px 0; font-size:15px; font-weight:600; color:#FFFFFF;">{{TAKEAWAY_3_TITLE}}</p>
+            <p style="margin:0; font-size:14px; line-height:1.55; color:#8A90A5;">{{TAKEAWAY_3_TEXT}}</p>
+          </td>
+        </tr>
+        </table>
+      </div>
+    </td></tr>
+
+  </table>
+</td></tr>
+
+<!-- ============================================ -->
+<!-- INLINE SVG SECTION DIVIDER                   -->
+<!-- ============================================ -->
+<tr><td style="background-color:#0B0E19; padding:0 32px 0 32px; text-align:center;">
+  <svg width="536" height="32" viewBox="0 0 536 32" xmlns="http://www.w3.org/2000/svg">
+    <defs>
+      <linearGradient id="divGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+        <stop offset="0%" style="stop-color:#0044FF;stop-opacity:0"/>
+        <stop offset="30%" style="stop-color:#0044FF;stop-opacity:1"/>
+        <stop offset="50%" style="stop-color:#00BFFF;stop-opacity:1"/>
+        <stop offset="70%" style="stop-color:#0044FF;stop-opacity:1"/>
+        <stop offset="100%" style="stop-color:#0044FF;stop-opacity:0"/>
+      </linearGradient>
+    </defs>
+    <line x1="0" y1="16" x2="536" y2="16" stroke="url(#divGrad)" stroke-width="1"/>
+    <circle cx="268" cy="16" r="3" fill="#00BFFF"/>
+    <circle cx="248" cy="16" r="1.5" fill="#0066FF" opacity="0.6"/>
+    <circle cx="288" cy="16" r="1.5" fill="#0066FF" opacity="0.6"/>
+  </svg>
+</td></tr>
+
+<!-- ============================================ -->
+<!-- TOOL / RESOURCE OF THE WEEK                  -->
+<!-- ============================================ -->
+<tr><td style="background-color:#0B0E19; padding:32px 32px 32px 32px;">
+  <div style="background:linear-gradient(135deg, #0C1430 0%, #0F1838 100%); border:1px solid #1A2545; border-radius:16px; padding:28px 26px; position:relative;">
+    <!-- Glow accent -->
+    <div style="width:60px; height:3px; background:linear-gradient(90deg, #0044FF, #00BFFF); border-radius:2px; margin-bottom:16px;"></div>
+    <span style="font-size:11px; font-weight:700; color:#00BFFF; letter-spacing:1.5px; text-transform:uppercase;">Resource of the Week</span>
+    <h3 style="margin:10px 0 8px 0; font-family:'Trebuchet MS', 'Arial Rounded MT Bold', sans-serif; font-size:20px; font-weight:700; color:#FFFFFF; letter-spacing:-0.3px;">
+      {{RESOURCE_TITLE}}
+    </h3>
+    <p style="margin:0 0 18px 0; font-size:14px; line-height:1.6; color:#8A90A5;">
+      {{RESOURCE_DESCRIPTION}}
+    </p>
+    <a href="{{RESOURCE_URL}}" target="_blank" style="display:inline-block; background-color:#0044FF; color:#FFFFFF; font-size:13px; font-weight:600; text-decoration:none; padding:10px 22px; border-radius:8px; letter-spacing:0.3px;">Check it out &rarr;</a>
+  </div>
+</td></tr>
+
+<!-- ============================================ -->
+<!-- PRIMARY CTA                                  -->
+<!-- ============================================ -->
+<tr><td style="background-color:#0B0E19; padding:8px 32px 40px 32px; text-align:center;">
+  <div style="background:linear-gradient(135deg, #0022AA 0%, #0044FF 40%, #0088FF 100%); border-radius:16px; padding:40px 32px;">
+    <h2 style="margin:0 0 10px 0; font-family:'Trebuchet MS', 'Arial Rounded MT Bold', sans-serif; font-size:24px; font-weight:800; color:#FFFFFF; letter-spacing:-0.5px;">
+      {{CTA_HEADLINE}}
+    </h2>
+    <p style="margin:0 0 24px 0; font-size:15px; color:rgba(255,255,255,0.8); line-height:1.5;">
+      {{CTA_SUBTEXT}}
+    </p>
+    <a href="{{CTA_URL}}" target="_blank" style="display:inline-block; background-color:#FFFFFF; color:#0033CC; font-size:15px; font-weight:700; text-decoration:none; padding:14px 36px; border-radius:10px; letter-spacing:-0.2px;">{{CTA_BUTTON_TEXT}}</a>
+  </div>
+</td></tr>
+
+<!-- ============================================ -->
+<!-- REFERRAL SECTION                             -->
+<!-- ============================================ -->
+<tr><td style="background-color:#0B0E19; padding:0 32px 40px 32px;">
+  <div style="background-color:#0F1225; border:1px solid #1A2040; border-radius:16px; padding:28px 26px; text-align:center;">
+    <span style="font-size:28px;">&#127873;</span>
+    <h3 style="margin:12px 0 8px 0; font-size:18px; font-weight:700; color:#FFFFFF;">Share the love, earn rewards</h3>
+    <p style="margin:0 0 18px 0; font-size:14px; line-height:1.55; color:#8A90A5;">
+      Know someone who'd get value from this newsletter?<br/>
+      Refer them and unlock exclusive perks.
+    </p>
+    <a href="{{REFERRAL_URL}}" target="_blank" style="display:inline-block; background:linear-gradient(135deg, #0044FF, #00BFFF); color:#FFFFFF; font-size:13px; font-weight:600; text-decoration:none; padding:11px 28px; border-radius:8px;">Share &amp; Earn &rarr;</a>
+  </div>
+</td></tr>
+
+<!-- ============================================ -->
+<!-- SVG SECTION DIVIDER 2                        -->
+<!-- ============================================ -->
+<tr><td style="background-color:#0B0E19; padding:0 32px; text-align:center;">
+  <svg width="536" height="2" viewBox="0 0 536 2" xmlns="http://www.w3.org/2000/svg">
+    <line x1="0" y1="1" x2="536" y2="1" stroke="#1A2040" stroke-width="1"/>
+  </svg>
+</td></tr>
+
+<!-- ============================================ -->
+<!-- AUTHOR / ABOUT SECTION                       -->
+<!-- ============================================ -->
+<tr><td style="background-color:#0B0E19; padding:32px 32px 24px 32px;">
+  <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tr>
+    <!-- Profile Photo -->
+    <td width="64" valign="top">
+      <img src="{{PROFILE_PIC_URL}}" alt="Seif" width="60" height="60" style="display:block; border-radius:50%; border:2px solid #1A2040;" />
+    </td>
+    <!-- Name, Title, Socials -->
+    <td valign="middle" style="padding-left:16px;">
+      <p style="margin:0 0 2px 0; font-size:16px; font-weight:700; color:#FFFFFF;">{{AUTHOR_NAME}}</p>
+      <p style="margin:0 0 10px 0; font-size:13px; color:#5A6380;">CEO, Netswick</p>
+      <!-- Social Icons Row -->
+      <table role="presentation" cellpadding="0" cellspacing="0" border="0">
+      <tr>
+        <!-- LinkedIn -->
+        <td style="padding-right:10px;">
+          <a href="{{LINKEDIN_URL}}" target="_blank" style="text-decoration:none;">
+            <svg width="22" height="22" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+              <rect width="24" height="24" rx="4" fill="#0A66C2"/>
+              <path d="M7.5 9.5v7h-2v-7h2zm-1-3.2c.66 0 1.2.54 1.2 1.2s-.54 1.2-1.2 1.2-1.2-.54-1.2-1.2.54-1.2 1.2-1.2zm3.5 3.2h1.9v1h.03c.27-.5.92-1.03 1.89-1.03 2.02 0 2.39 1.33 2.39 3.06v3.97h-2v-3.52c0-.84-.01-1.92-1.17-1.92-1.17 0-1.35.92-1.35 1.86v3.58h-2v-7h1.31z" fill="#FFFFFF"/>
+            </svg>
+          </a>
+        </td>
+        <!-- YouTube -->
+        <td>
+          <a href="{{YOUTUBE_URL}}" target="_blank" style="text-decoration:none;">
+            <svg width="22" height="22" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+              <rect width="24" height="24" rx="4" fill="#FF0000"/>
+              <path d="M17.6 8.5c-.2-.7-.7-1.2-1.4-1.4C15 6.8 12 6.8 12 6.8s-3 0-4.2.3c-.7.2-1.2.7-1.4 1.4C6 9.7 6 12 6 12s0 2.3.4 3.5c.2.7.7 1.2 1.4 1.4 1.2.3 4.2.3 4.2.3s3 0 4.2-.3c.7-.2 1.2-.7 1.4-1.4.4-1.2.4-3.5.4-3.5s0-2.3-.4-3.5zM10.5 14.5v-5l3.5 2.5-3.5 2.5z" fill="#FFFFFF"/>
+            </svg>
+          </a>
+        </td>
+      </tr>
+      </table>
+    </td>
+  </tr>
+  </table>
+</td></tr>
+
+<!-- ============================================ -->
+<!-- FOOTER                                       -->
+<!-- ============================================ -->
+<tr><td style="background-color:#07080F; padding:24px 32px 16px 32px; text-align:center;">
+  <p style="margin:0 0 6px 0; font-size:12px; color:#3A3F55;">&copy; {{YEAR}} Netswick. All rights reserved.</p>
+  <p style="margin:0 0 6px 0; font-size:12px; color:#3A3F55;">Helping merch companies master lead generation.</p>
+  <p style="margin:0; font-size:12px;">
+    <a href="{{UNSUBSCRIBE_URL}}" style="color:#5A6380; text-decoration:underline;">Unsubscribe</a>
+    <span style="color:#2A2F40; padding:0 6px;">|</span>
+    <a href="{{PREFERENCES_URL}}" style="color:#5A6380; text-decoration:underline;">Preferences</a>
+  </p>
+</td></tr>
+
+<!-- BOTTOM GRADIENT ACCENT BAR -->
+<tr><td style="height:3px; background:linear-gradient(90deg, #0044FF 0%, #00BFFF 50%, #0044FF 100%); font-size:0; line-height:0;">&nbsp;</td></tr>
+
+</table>
+<!-- END MAIN CONTAINER -->
+
+</td></tr>
+</table>
+<!-- END OUTER WRAPPER -->
+
+</body>
+</html>
