@@ -7,7 +7,10 @@
     "dev": "tsx watch src/index.ts",
     "build": "tsc",
     "start": "node dist/index.js",
-    "auth:gmail": "tsx src/scripts/gmail-auth.ts"
+    "auth:gmail": "tsx src/scripts/gmail-auth.ts",
+    "newsletter:preview": "tsx src/newsletter/cli/preview.ts",
+    "newsletter:pubs": "tsx src/newsletter/cli/list-publications.ts",
+    "newsletter:publish": "tsx src/newsletter/cli/publish.ts"
   },
   "repository": {
     "type": "git",

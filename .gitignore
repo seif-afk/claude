@@ -2,3 +2,5 @@ node_modules/
 dist/
 .env
 *.db
+newsletter-dist/
+.env.local
