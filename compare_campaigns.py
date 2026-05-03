@@ -4,7 +4,9 @@
 import csv
 import os
 import sys
+import threading
 import time
+from concurrent.futures import ThreadPoolExecutor, as_completed
 from urllib.parse import urlencode
 from urllib.request import Request, urlopen
 from urllib.error import HTTPError, URLError
@@ -19,14 +21,28 @@ PERIOD_B = ("2026-04-19", "2026-05-02")
 EXCLUDE_SUBSTRING = "netswick"
 OUTPUT_CSV = "campaign_comparison.csv"
 STATE_FILE = "/tmp/sl_progress.json"
-PACE_SECONDS = 0.4  # ~150 req/min, under the 200/min limit
+WORKERS = 6
+PACE_SECONDS = 0.32  # ~190 req/min global cap (200/min limit)
+_pace_lock = threading.Lock()
+_next_call_at = 0.0
+_state_lock = threading.Lock()
+
+
+def _wait_turn():
+    global _next_call_at
+    with _pace_lock:
+        now = time.monotonic()
+        wait = _next_call_at - now
+        if wait > 0:
+            time.sleep(wait)
+        _next_call_at = max(now, _next_call_at) + PACE_SECONDS
 
 
 def get_json(path, params, max_retries=8):
     qs = urlencode({"api_key": API_KEY, **params})
     url = f"{BASE}{path}?{qs}"
     backoff = 30  # rate limit window is per-minute
-    time.sleep(PACE_SECONDS)
+    _wait_turn()
     for attempt in range(max_retries):
         try:
             req = Request(url, headers={
@@ -62,10 +78,11 @@ def load_state():
 
 
 def save_state(state):
-    tmp = STATE_FILE + ".tmp"
-    with open(tmp, "w") as f:
-        json.dump(state, f)
-    os.replace(tmp, STATE_FILE)
+    with _state_lock:
+        tmp = STATE_FILE + ".tmp"
+        with open(tmp, "w") as f:
+            json.dump(state, f)
+        os.replace(tmp, STATE_FILE)
 
 
 def pick(d, *keys, default=0):
@@ -82,7 +99,7 @@ def pick(d, *keys, default=0):
     return default
 
 
-def fetch_period_stats(campaign_id, start, end, debug=False):
+def fetch_period_stats(campaign_id, start, end):
     """Returns dict with sent, replies, positive_replies, bounces for the period.
 
     /campaigns/{id}/analytics-by-date returns a single aggregated object with
@@ -94,9 +111,6 @@ def fetch_period_stats(campaign_id, start, end, debug=False):
         f"/campaigns/{campaign_id}/analytics-by-date",
         {"start_date": start, "end_date": end},
     )
-    if debug:
-        print(f"  DEBUG analytics-by-date sample: {json.dumps(data)[:600]}", flush=True)
-
     sent = pick(data, "sent_count", "sent", "total_sent", "unique_sent_count")
     replies = pick(data, "reply_count", "replies", "total_replies")
     bounces = pick(data, "bounce_count", "bounces", "total_bounces")
@@ -108,8 +122,6 @@ def fetch_period_stats(campaign_id, start, end, debug=False):
             "/analytics/day-wise-positive-reply-stats",
             {"start_date": start, "end_date": end, "campaign_ids": str(campaign_id)},
         )
-        if debug:
-            print(f"  DEBUG positive-reply sample: {json.dumps(pos)[:600]}", flush=True)
         pos_rows = []
         if isinstance(pos, dict):
             d = pos.get("data") or {}
@@ -150,33 +162,45 @@ def main():
 
     state = load_state()
     print(f"  -> resuming with {len(state)} campaigns already cached", flush=True)
-    debug_done = False
-    for i, c in enumerate(filtered, 1):
+    pending = [c for c in filtered if str(c["id"]) not in state]
+    total = len(filtered)
+    done_count = total - len(pending)
+    print(f"  -> {done_count} cached, {len(pending)} to fetch with {WORKERS} workers", flush=True)
+
+    def worker(c):
         cid, name = c["id"], c.get("name", "")
-        cid_str = str(cid)
-        if cid_str in state:
-            continue
-        print(f"[{i}/{len(filtered)}] {name} (id={cid})", flush=True)
         try:
-            a = fetch_period_stats(cid, *PERIOD_A, debug=not debug_done)
-            debug_done = True
+            a = fetch_period_stats(cid, *PERIOD_A)
             b = fetch_period_stats(cid, *PERIOD_B)
         except RuntimeError as e:
-            print(f"  ! Failed: {e} — skipping", flush=True)
-            continue
+            return cid, name, None, None, str(e)
+        return cid, name, a, b, None
 
-        state[cid_str] = {"name": name, "status": c.get("status", ""), "a": a, "b": b}
-        save_state(state)
-
-        total_activity = (
-            a["sent"] + a["replies"] + a["positive_replies"] + a["bounces"]
-            + b["sent"] + b["replies"] + b["positive_replies"] + b["bounces"]
-        )
-        if total_activity == 0:
-            print(f"  -> zero activity in both periods, skipping", flush=True)
-            continue
-        print(f"  -> A: sent={a['sent']} replies={a['replies']} pos={a['positive_replies']} bounces={a['bounces']}", flush=True)
-        print(f"  -> B: sent={b['sent']} replies={b['replies']} pos={b['positive_replies']} bounces={b['bounces']}", flush=True)
+    progress_lock = threading.Lock()
+    counter = [done_count]
+    with ThreadPoolExecutor(max_workers=WORKERS) as ex:
+        futures = {ex.submit(worker, c): c for c in pending}
+        for fut in as_completed(futures):
+            c = futures[fut]
+            cid, name, a, b, err = fut.result()
+            with progress_lock:
+                counter[0] += 1
+                idx = counter[0]
+            if err:
+                print(f"[{idx}/{total}] {name} (id={cid}) ! {err}", flush=True)
+                continue
+            state[str(cid)] = {"name": name, "status": c.get("status", ""), "a": a, "b": b}
+            save_state(state)
+            total_activity = (
+                a["sent"] + a["replies"] + a["positive_replies"] + a["bounces"]
+                + b["sent"] + b["replies"] + b["positive_replies"] + b["bounces"]
+            )
+            if total_activity == 0:
+                continue
+            print(f"[{idx}/{total}] {name} (id={cid}) "
+                  f"A:s={a['sent']}/r={a['replies']}/p={a['positive_replies']}/b={a['bounces']} "
+                  f"B:s={b['sent']}/r={b['replies']}/p={b['positive_replies']}/b={b['bounces']}",
+                  flush=True)
 
     rows_out = []
     for c in filtered:
