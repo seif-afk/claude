@@ -1,0 +1,1120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Not Interested Transcripts | Mar 23-28</title>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; background: #0f1117; color: #e1e4e8; min-height: 100vh; }
+  .header { background: linear-gradient(135deg, #1a1e2e, #2d1b3d); padding: 32px 24px 24px; border-bottom: 1px solid #30363d; position: sticky; top: 0; z-index: 10; }
+  .header h1 { font-size: 22px; font-weight: 600; margin-bottom: 4px; }
+  .header p { color: #8b949e; font-size: 14px; margin-bottom: 16px; }
+  .stats { display: flex; gap: 24px; margin-bottom: 16px; }
+  .stat { text-align: center; }
+  .stat-val { font-size: 28px; font-weight: 700; color: #f0883e; }
+  .stat-label { font-size: 11px; color: #8b949e; text-transform: uppercase; letter-spacing: 1px; }
+  .controls { display: flex; gap: 12px; flex-wrap: wrap; }
+  .search { flex: 1; min-width: 200px; padding: 10px 14px; background: #161b22; border: 1px solid #30363d; border-radius: 8px; color: #e1e4e8; font-size: 14px; outline: none; transition: border-color 0.2s; }
+  .search:focus { border-color: #f0883e; }
+  .sort-btn { padding: 10px 16px; background: #161b22; border: 1px solid #30363d; border-radius: 8px; color: #8b949e; font-size: 13px; cursor: pointer; transition: all 0.2s; }
+  .sort-btn:hover, .sort-btn.active { border-color: #f0883e; color: #f0883e; }
+  .container { max-width: 900px; margin: 0 auto; padding: 24px 16px; }
+  .count { color: #8b949e; font-size: 13px; margin-bottom: 16px; }
+  .card { background: #161b22; border: 1px solid #30363d; border-radius: 12px; margin-bottom: 12px; overflow: hidden; transition: border-color 0.2s; }
+  .card:hover { border-color: #484f58; }
+  .card-header { padding: 16px 20px; cursor: pointer; user-select: none; }
+  .card-title { display: flex; align-items: center; gap: 10px; margin-bottom: 4px; }
+  .name { font-size: 16px; font-weight: 600; }
+  .badge { font-size: 11px; background: #f0883e22; color: #f0883e; padding: 2px 8px; border-radius: 12px; }
+  .card-subtitle { font-size: 13px; color: #8b949e; margin-bottom: 6px; }
+  .card-meta { display: flex; justify-content: space-between; font-size: 12px; color: #6e7681; }
+  .card-body { display: none; padding: 0 20px 20px; }
+  .card-body.open { display: block; }
+  .transcript { background: #0d1117; border: 1px solid #21262d; border-radius: 8px; padding: 16px; font-size: 14px; line-height: 1.7; color: #c9d1d9; white-space: pre-wrap; word-wrap: break-word; }
+  .no-results { text-align: center; padding: 60px 20px; color: #484f58; font-size: 16px; }
+  .expand-all { padding: 8px 14px; background: none; border: 1px solid #30363d; border-radius: 8px; color: #8b949e; font-size: 12px; cursor: pointer; }
+  .expand-all:hover { border-color: #f0883e; color: #f0883e; }
+</style>
+</head>
+<body>
+<div class="header">
+  <h1>Not Interested &mdash; Call Transcripts</h1>
+  <p>Salesfinity calls from March 23 &ndash; 28, 2026</p>
+  <div class="stats">
+    <div class="stat"><div class="stat-val">64</div><div class="stat-label">Calls</div></div>
+    <div class="stat"><div class="stat-val">5</div><div class="stat-label">Days</div></div>
+  </div>
+  <div class="controls">
+    <input class="search" type="text" placeholder="Search by name, company, or transcript..." oninput="filterCards(this.value)">
+    <button class="sort-btn active" onclick="sortCards('name', this)">A-Z</button>
+    <button class="sort-btn" onclick="sortCards('date', this)">Date</button>
+    <button class="expand-all" onclick="toggleAll()">Expand All</button>
+  </div>
+</div>
+<div class="container">
+  <div class="count" id="count">Showing 64 of 64 calls</div>
+  <div id="cards">
+    <div class="card" data-contact="alyssa carrillo unknown" data-company="4over.com" data-transcript="hello alyssa this is her hey it&#x27;s lina from netsuite i know i&#x27;m calling out of the blue here so i&#x27;ll just tell you why in thirty seconds then you can decide if you wanna continue cool okay about what so what we do is that we can find thousands of prospects who need branded merch for their upcoming trade shows using ai then we handle the outreach and book qualified sales meetings directly on your team&#x27;s calendar and right now we&#x27;re working with leaders like swag dot com merch dot com and helping our clients close fortune one hundred level so just wanted to offer you a two week pilot is monday good for a short demo i&#x27;m sorry i&#x27;m not sure what that is i don&#x27;t know" data-date="2026-03-27">
+      <div class="card-header" onclick="toggleCard(0)">
+        <div class="card-title">
+          <span class="name">Alyssa Carrillo Unknown</span>
+          <span class="badge">62s</span>
+        </div>
+        <div class="card-subtitle">Human Resources Business Partner &middot; 4over.com</div>
+        <div class="card-meta">
+          <span>+19094505442</span>
+          <span>2026-03-27</span>
+        </div>
+      </div>
+      <div class="card-body" id="card-0">
+        <div class="transcript">hello alyssa this is her hey it&#x27;s lina from netsuite i know i&#x27;m calling out of the blue here so i&#x27;ll just tell you why in thirty seconds then you can decide if you wanna continue cool okay about what so what we do is that we can find thousands of prospects who need branded merch for their upcoming trade shows using ai then we handle the outreach and book qualified sales meetings directly on your team&#x27;s calendar and right now we&#x27;re working with leaders like swag dot com merch dot com and helping our clients close fortune one hundred level so just wanted to offer you a two week pilot is monday good for a short demo i&#x27;m sorry i&#x27;m not sure what that is i don&#x27;t know</div>
+      </div>
+    </div>
+    <div class="card" data-contact="bailey catrabone-brinson" data-company="davismarketingcompany.com" data-transcript="hello hello hey bailey it&#x27;s is this bailey yes it&#x27;s lina from netsuite i know i&#x27;m calling you a little bit out of the blue here so i&#x27;ll just tell you why in thirty seconds then you can decide if you wanna continue is that cool sure great so we can find thousands of prospects who need branded merch for their upcoming trade shows using ai then we handle the outreach and book qualified sales meetings directly on your team&#x27;s calendar and right now we&#x27;re working with top promo companies like swine dot com merge dot com and we&#x27;re helping our clients close fortune one hundred level so just wanted to offer you a two week pilot so is tomorrow good for a short demo no thank you" data-date="2026-03-25">
+      <div class="card-header" onclick="toggleCard(1)">
+        <div class="card-title">
+          <span class="name">Bailey Catrabone-Brinson</span>
+          <span class="badge">57s</span>
+        </div>
+        <div class="card-subtitle">Chief Operating Officer &middot; davismarketingcompany.com</div>
+        <div class="card-meta">
+          <span>+19125411670</span>
+          <span>2026-03-25</span>
+        </div>
+      </div>
+      <div class="card-body" id="card-1">
+        <div class="transcript">hello hello hey bailey it&#x27;s is this bailey yes it&#x27;s lina from netsuite i know i&#x27;m calling you a little bit out of the blue here so i&#x27;ll just tell you why in thirty seconds then you can decide if you wanna continue is that cool sure great so we can find thousands of prospects who need branded merch for their upcoming trade shows using ai then we handle the outreach and book qualified sales meetings directly on your team&#x27;s calendar and right now we&#x27;re working with top promo companies like swine dot com merge dot com and we&#x27;re helping our clients close fortune one hundred level so just wanted to offer you a two week pilot so is tomorrow good for a short demo no thank you</div>
+      </div>
+    </div>
+    <div class="card" data-contact="binny cherian" data-company="vprintinc.com" data-transcript="hey benny it&#x27;s lina from nextweek i know i&#x27;m calling a little bit out of blue here so i&#x27;ll just tell you why in thirty seconds then you can decide if you wanna continue hello is that cool what is that your voice is breaking ma&#x27;am we couldn&#x27;t hear you is the line breaking yeah yeah oh what do you hear anything i&#x27;m calling from netsuite netflix no no that&#x27;s another company mine is netsuite it&#x27;s spelled like so n e t s w i c k netsuite and what is this regarding so we we can find thousands of prospects who need branded merch for their upcoming trade shows using ai then we handle the outreach and book qualified sales meetings directly on your team&#x27;s calendar okay yeah yeah no thank you" data-date="2026-03-24">
+      <div class="card-header" onclick="toggleCard(2)">
+        <div class="card-title">
+          <span class="name">Binny Cherian</span>
+          <span class="badge">66s</span>
+        </div>
+        <div class="card-subtitle">President &middot; vprintinc.com</div>
+        <div class="card-meta">
+          <span>+17032891560</span>
+          <span>2026-03-24</span>
+        </div>
+      </div>
+      <div class="card-body" id="card-2">
+        <div class="transcript">hey benny it&#x27;s lina from nextweek i know i&#x27;m calling a little bit out of blue here so i&#x27;ll just tell you why in thirty seconds then you can decide if you wanna continue hello is that cool what is that your voice is breaking ma&#x27;am we couldn&#x27;t hear you is the line breaking yeah yeah oh what do you hear anything i&#x27;m calling from netsuite netflix no no that&#x27;s another company mine is netsuite it&#x27;s spelled like so n e t s w i c k netsuite and what is this regarding so we we can find thousands of prospects who need branded merch for their upcoming trade shows using ai then we handle the outreach and book qualified sales meetings directly on your team&#x27;s calendar okay yeah yeah no thank you</div>
+      </div>
+    </div>
+    <div class="card" data-contact="blake ward" data-company="twoandonedesigns.com" data-transcript="this is blake hey blake it&#x27;s lina from netsuite hello i know i&#x27;m calling you a little bit out of the blue here so i&#x27;ll just tell you the purpose of the call in thirty seconds then you can decide if you wanna continue is that cool sure great so here&#x27;s the thing blake so we&#x27;re able to find thousands of prospects who need branded merch for their upcoming trade" data-date="2026-03-23">
+      <div class="card-header" onclick="toggleCard(3)">
+        <div class="card-title">
+          <span class="name">Blake Ward</span>
+          <span class="badge">26s</span>
+        </div>
+        <div class="card-subtitle">Owner &middot; twoandonedesigns.com</div>
+        <div class="card-meta">
+          <span>+12543158417</span>
+          <span>2026-03-23</span>
+        </div>
+      </div>
+      <div class="card-body" id="card-3">
+        <div class="transcript">this is blake hey blake it&#x27;s lina from netsuite hello i know i&#x27;m calling you a little bit out of the blue here so i&#x27;ll just tell you the purpose of the call in thirty seconds then you can decide if you wanna continue is that cool sure great so here&#x27;s the thing blake so we&#x27;re able to find thousands of prospects who need branded merch for their upcoming trade</div>
+      </div>
+    </div>
+    <div class="card" data-contact="bob meyer" data-company="beacon-sm.com" data-transcript="hello hello hey bob it&#x27;s lina from netflix i know i&#x27;m calling you a little bit out of the blue here so i&#x27;ll just tell you why in thirty seconds then you can decide if you wanna continue is that cool what you&#x27;re from netflix netsuite netsuite it&#x27;s spelled like so n e t s w i c k and how can i help you so we&#x27;re able to find thousands of prospects who need branded merch for their upcoming trade shows using ai then next thing we do is that we completely handle the outreach and book qualified sales meetings directly on your team&#x27;s calendar and right now we&#x27;re working with top promo companies like swag dot com" data-date="2026-03-23">
+      <div class="card-header" onclick="toggleCard(4)">
+        <div class="card-title">
+          <span class="name">Bob Meyer</span>
+          <span class="badge">53s</span>
+        </div>
+        <div class="card-subtitle">President &middot; beacon-sm.com</div>
+        <div class="card-meta">
+          <span>+19492918158</span>
+          <span>2026-03-23</span>
+        </div>
+      </div>
+      <div class="card-body" id="card-4">
+        <div class="transcript">hello hello hey bob it&#x27;s lina from netflix i know i&#x27;m calling you a little bit out of the blue here so i&#x27;ll just tell you why in thirty seconds then you can decide if you wanna continue is that cool what you&#x27;re from netflix netsuite netsuite it&#x27;s spelled like so n e t s w i c k and how can i help you so we&#x27;re able to find thousands of prospects who need branded merch for their upcoming trade shows using ai then next thing we do is that we completely handle the outreach and book qualified sales meetings directly on your team&#x27;s calendar and right now we&#x27;re working with top promo companies like swag dot com</div>
+      </div>
+    </div>
+    <div class="card" data-contact="bradley mohwinkle" data-company="rapidsrepro.com" data-transcript="fred hey bradley it&#x27;s lina from hey good day netsuite i know i&#x27;m calling out of the blue here so i&#x27;ll tell you why in thirty seconds then you can decide if you wanna continue cool what is this it&#x27;s lina from netsuite okay yeah yeah okay so we can find thousands of prospects who need branded merch for their upcoming trade shows using ai then we handle the outreach and book qualified sales meetings directly on your team&#x27;s calendar and right now we&#x27;re working with leaders like swag dot com merch dot com and helping our clients close fortune one hundred level so just wanted to offer you a two week pilot is tomorrow good for a short demo i&#x27;m good thank you" data-date="2026-03-26">
+      <div class="card-header" onclick="toggleCard(5)">
+        <div class="card-title">
+          <span class="name">Bradley Mohwinkle</span>
+          <span class="badge">54s</span>
+        </div>
+        <div class="card-subtitle">President &middot; rapidsrepro.com</div>
+        <div class="card-meta">
+          <span>+13198990887</span>
+          <span>2026-03-26</span>
+        </div>
+      </div>
+      <div class="card-body" id="card-5">
+        <div class="transcript">fred hey bradley it&#x27;s lina from hey good day netsuite i know i&#x27;m calling out of the blue here so i&#x27;ll tell you why in thirty seconds then you can decide if you wanna continue cool what is this it&#x27;s lina from netsuite okay yeah yeah okay so we can find thousands of prospects who need branded merch for their upcoming trade shows using ai then we handle the outreach and book qualified sales meetings directly on your team&#x27;s calendar and right now we&#x27;re working with leaders like swag dot com merch dot com and helping our clients close fortune one hundred level so just wanted to offer you a two week pilot is tomorrow good for a short demo i&#x27;m good thank you</div>
+      </div>
+    </div>
+    <div class="card" data-contact="brianna ellis" data-company="vellabox.com" data-transcript="hello hello hey brianna it&#x27;s lina from netswik i know i&#x27;m calling out of the blue here so i&#x27;ll just tell you why in thirty seconds then you can decide if you wanna continue cool who are you with okay netsuite it&#x27;s spelled like so n e t s w i c k netsuite what do you guys do so we can find thousands of prospects who need branded merch for their upcoming trade shows using ai then we handle the outreach and book qualified sales meetings directly on your team&#x27;s calendar and right now we&#x27;re working with leaders like swag dot com merge dot com and helping our clients close fortune one hundred level so just wanted to offer you a two week follow-up sorry sorry we&#x27;re just yeah we&#x27;re just not doing any trade shows or any merchandise or anything like that at this time so we wouldn&#x27;t be a a client type so thank you and have a good day bye bye" data-date="2026-03-26">
+      <div class="card-header" onclick="toggleCard(6)">
+        <div class="card-title">
+          <span class="name">Brianna Ellis</span>
+          <span class="badge">67s</span>
+        </div>
+        <div class="card-subtitle">Chief Executive Officer &middot; vellabox.com</div>
+        <div class="card-meta">
+          <span>+16145061867</span>
+          <span>2026-03-26</span>
+        </div>
+      </div>
+      <div class="card-body" id="card-6">
+        <div class="transcript">hello hello hey brianna it&#x27;s lina from netswik i know i&#x27;m calling out of the blue here so i&#x27;ll just tell you why in thirty seconds then you can decide if you wanna continue cool who are you with okay netsuite it&#x27;s spelled like so n e t s w i c k netsuite what do you guys do so we can find thousands of prospects who need branded merch for their upcoming trade shows using ai then we handle the outreach and book qualified sales meetings directly on your team&#x27;s calendar and right now we&#x27;re working with leaders like swag dot com merge dot com and helping our clients close fortune one hundred level so just wanted to offer you a two week follow-up sorry sorry we&#x27;re just yeah we&#x27;re just not doing any trade shows or any merchandise or anything like that at this time so we wouldn&#x27;t be a a client type so thank you and have a good day bye bye</div>
+      </div>
+    </div>
+    <div class="card" data-contact="bryce davidson" data-company="fraternitees.com" data-transcript="hello hello hey bryce it&#x27;s lina from neswick i know i&#x27;m calling a little bit out of the blue here so i&#x27;ll just tell you why in thirty seconds then you can decide if you wanna continue is that cool bryce yeah can you hear me you said nesquik like the milk no no no no i said netsuite it&#x27;s spelled like so n e t s w i c k netsuite okay give me the best pitch you got okay so we can find thousands of prospects who need branded merch for their upcoming trade shows using ai then we handle the outreach and book qualified sales meetings directly on your team&#x27;s calendar and right now we&#x27;re working with top promo companies like swag dot com merch dot com and helping our clients close fortune one hundred level so just wanted to offer you a two week pilot so is tomorrow good for a short demo no thank you okay" data-date="2026-03-25">
+      <div class="card-header" onclick="toggleCard(7)">
+        <div class="card-title">
+          <span class="name">Bryce Davidson</span>
+          <span class="badge">67s</span>
+        </div>
+        <div class="card-subtitle">Correct Title &middot; fraternitees.com</div>
+        <div class="card-meta">
+          <span>+15735764793</span>
+          <span>2026-03-25</span>
+        </div>
+      </div>
+      <div class="card-body" id="card-7">
+        <div class="transcript">hello hello hey bryce it&#x27;s lina from neswick i know i&#x27;m calling a little bit out of the blue here so i&#x27;ll just tell you why in thirty seconds then you can decide if you wanna continue is that cool bryce yeah can you hear me you said nesquik like the milk no no no no i said netsuite it&#x27;s spelled like so n e t s w i c k netsuite okay give me the best pitch you got okay so we can find thousands of prospects who need branded merch for their upcoming trade shows using ai then we handle the outreach and book qualified sales meetings directly on your team&#x27;s calendar and right now we&#x27;re working with top promo companies like swag dot com merch dot com and helping our clients close fortune one hundred level so just wanted to offer you a two week pilot so is tomorrow good for a short demo no thank you okay</div>
+      </div>
+    </div>
+    <div class="card" data-contact="carolyn glenn" data-company="stitchmine.com" data-transcript="hello sheila group hello hey caroline it&#x27;s lina from netswik i know i&#x27;m calling a little bit out of the blue here so i&#x27;ll just show you why in thirty seconds then you can decide if you wanna continue is that cool sure great so here&#x27;s the thing so we&#x27;re able to find thousands of prospects who need branded merch for their upcoming trade shows using ai the next thing we do is that we completely handle the outreach and book qualified sales meetings directly on your team&#x27;s calendar so they will just have to take care of qualified leads instead of wasting time on cold calling and right now we&#x27;re working with top promo companies like swai dot com merch dot com and we&#x27;re helping our clients close fortune one hundred level so just wanted to offer you a two week pilot and does that does tomorrow sound good for a short demo no thank you sorry alright" data-date="2026-03-23">
+      <div class="card-header" onclick="toggleCard(8)">
+        <div class="card-title">
+          <span class="name">Carolyn Glenn</span>
+          <span class="badge">64s</span>
+        </div>
+        <div class="card-subtitle">President &middot; stitchmine.com</div>
+        <div class="card-meta">
+          <span>+18472982285</span>
+          <span>2026-03-23</span>
+        </div>
+      </div>
+      <div class="card-body" id="card-8">
+        <div class="transcript">hello sheila group hello hey caroline it&#x27;s lina from netswik i know i&#x27;m calling a little bit out of the blue here so i&#x27;ll just show you why in thirty seconds then you can decide if you wanna continue is that cool sure great so here&#x27;s the thing so we&#x27;re able to find thousands of prospects who need branded merch for their upcoming trade shows using ai the next thing we do is that we completely handle the outreach and book qualified sales meetings directly on your team&#x27;s calendar so they will just have to take care of qualified leads instead of wasting time on cold calling and right now we&#x27;re working with top promo companies like swai dot com merch dot com and we&#x27;re helping our clients close fortune one hundred level so just wanted to offer you a two week pilot and does that does tomorrow sound good for a short demo no thank you sorry alright</div>
+      </div>
+    </div>
+    <div class="card" data-contact="catherine beldotti donlan" data-company="superiorgroupofcompanies.com" data-transcript="this is catherine hey catherine it&#x27;s lina from netsuite i know i&#x27;m calling out of the blue here so i&#x27;ll just tell you why in thirty seconds then you can decide if you wanna continue cool sure great so we can find thousands of prospects who need branded merch for their upcoming trade shows using ai then we handle the outreach and book qualified sales meetings directly on your team&#x27;s calendar and right now we&#x27;re working with leaders like swag dot com merch dot com and helping our clients close fortune one hundred level so just wanted to offer you a two week pilot is tomorrow good for a short demo oh thank thank you yep i&#x27;m all set thank you for your call mhmm" data-date="2026-03-26">
+      <div class="card-header" onclick="toggleCard(9)">
+        <div class="card-title">
+          <span class="name">Catherine Beldotti Donlan</span>
+          <span class="badge">51s</span>
+        </div>
+        <div class="card-subtitle">President &middot; superiorgroupofcompanies.com</div>
+        <div class="card-meta">
+          <span>+19787618679</span>
+          <span>2026-03-26</span>
+        </div>
+      </div>
+      <div class="card-body" id="card-9">
+        <div class="transcript">this is catherine hey catherine it&#x27;s lina from netsuite i know i&#x27;m calling out of the blue here so i&#x27;ll just tell you why in thirty seconds then you can decide if you wanna continue cool sure great so we can find thousands of prospects who need branded merch for their upcoming trade shows using ai then we handle the outreach and book qualified sales meetings directly on your team&#x27;s calendar and right now we&#x27;re working with leaders like swag dot com merch dot com and helping our clients close fortune one hundred level so just wanted to offer you a two week pilot is tomorrow good for a short demo oh thank thank you yep i&#x27;m all set thank you for your call mhmm</div>
+      </div>
+    </div>
+    <div class="card" data-contact="catherine lukas" data-company="city-pickle.com" data-transcript="this is kat hello hi catherine it&#x27;s lina from netswik i know i&#x27;m calling a little bit out of the blue here so i&#x27;ll just tell you why in thirty seconds then you can decide if you wanna continue is that cool i&#x27;m sorry who are you with lena with netsuite n e t x w i c k okay i&#x27;m riding my bike so can you what what is this about okay so we&#x27;ll keep it short so we&#x27;re able to find thousands of prospects who need branded merch for their upcoming okay i i don&#x27;t need i don&#x27;t need it thank you so much have a good day" data-date="2026-03-23">
+      <div class="card-header" onclick="toggleCard(10)">
+        <div class="card-title">
+          <span class="name">Catherine Lukas</span>
+          <span class="badge">40s</span>
+        </div>
+        <div class="card-subtitle">Vice President of Sales &middot; city-pickle.com</div>
+        <div class="card-meta">
+          <span>+19179744141</span>
+          <span>2026-03-23</span>
+        </div>
+      </div>
+      <div class="card-body" id="card-10">
+        <div class="transcript">this is kat hello hi catherine it&#x27;s lina from netswik i know i&#x27;m calling a little bit out of the blue here so i&#x27;ll just tell you why in thirty seconds then you can decide if you wanna continue is that cool i&#x27;m sorry who are you with lena with netsuite n e t x w i c k okay i&#x27;m riding my bike so can you what what is this about okay so we&#x27;ll keep it short so we&#x27;re able to find thousands of prospects who need branded merch for their upcoming okay i i don&#x27;t need i don&#x27;t need it thank you so much have a good day</div>
+      </div>
+    </div>
+    <div class="card" data-contact="charles morando" data-company="gbscorp.com" data-transcript="hello hey charles it&#x27;s lina from netswicke i know i know i&#x27;m calling a little bit out of the blue here so i&#x27;m still in about thirty seconds then you can decide if you wanna continue is that cool what is this did you hear anything at all excuse me i i don&#x27;t understand would you say that again i was saying it&#x27;s lina from netsuite and i know that i&#x27;m calling you a little bit out of the blue here so i&#x27;ll just tell you why in thirty seconds then you can decide if you wanna continue okay alright so we&#x27;re able to find thousands of prospects who need branded merch for their upcoming trade shows using ai then we handle the outreach and book qualified sales meetings directly on your team&#x27;s calendar and right now we&#x27;re working with top promo companies like swag dot com merch dot no thank you not" data-date="2026-03-24">
+      <div class="card-header" onclick="toggleCard(11)">
+        <div class="card-title">
+          <span class="name">Charles Morando</span>
+          <span class="badge">61s</span>
+        </div>
+        <div class="card-subtitle">Owner &middot; gbscorp.com</div>
+        <div class="card-meta">
+          <span>+15615041467</span>
+          <span>2026-03-24</span>
+        </div>
+      </div>
+      <div class="card-body" id="card-11">
+        <div class="transcript">hello hey charles it&#x27;s lina from netswicke i know i know i&#x27;m calling a little bit out of the blue here so i&#x27;m still in about thirty seconds then you can decide if you wanna continue is that cool what is this did you hear anything at all excuse me i i don&#x27;t understand would you say that again i was saying it&#x27;s lina from netsuite and i know that i&#x27;m calling you a little bit out of the blue here so i&#x27;ll just tell you why in thirty seconds then you can decide if you wanna continue okay alright so we&#x27;re able to find thousands of prospects who need branded merch for their upcoming trade shows using ai then we handle the outreach and book qualified sales meetings directly on your team&#x27;s calendar and right now we&#x27;re working with top promo companies like swag dot com merch dot no thank you not</div>
+      </div>
+    </div>
+    <div class="card" data-contact="chris blaschko" data-company="supremegraphics.com" data-transcript="this is chris hi chris it&#x27;s lina from netsuite i know i&#x27;m calling out of the blue here so i&#x27;d show you why in thirty seconds then you can decide if you wanna continue cool okay great so we can find thousands of prospects who need branded merch for their upcoming trade shows using ai then we handle the outreach and book qualified sales meetings directly on your team&#x27;s calendar and right now we&#x27;re working with leaders like swag dot com merch dot com and helping our clients close fortune one hundred level so just wanted to offer you a two week pilot is tomorrow good for a short demo no i&#x27;m not interested perfect so is that because you&#x27;re like already doing this in house or you already tried something that did not work i just don&#x27;t have a need for it but thank you alright perfect have a good day" data-date="2026-03-26">
+      <div class="card-header" onclick="toggleCard(12)">
+        <div class="card-title">
+          <span class="name">Chris Blaschko</span>
+          <span class="badge">64s</span>
+        </div>
+        <div class="card-subtitle">Chief Executive Officer &middot; supremegraphics.com</div>
+        <div class="card-meta">
+          <span>+16087974150</span>
+          <span>2026-03-26</span>
+        </div>
+      </div>
+      <div class="card-body" id="card-12">
+        <div class="transcript">this is chris hi chris it&#x27;s lina from netsuite i know i&#x27;m calling out of the blue here so i&#x27;d show you why in thirty seconds then you can decide if you wanna continue cool okay great so we can find thousands of prospects who need branded merch for their upcoming trade shows using ai then we handle the outreach and book qualified sales meetings directly on your team&#x27;s calendar and right now we&#x27;re working with leaders like swag dot com merch dot com and helping our clients close fortune one hundred level so just wanted to offer you a two week pilot is tomorrow good for a short demo no i&#x27;m not interested perfect so is that because you&#x27;re like already doing this in house or you already tried something that did not work i just don&#x27;t have a need for it but thank you alright perfect have a good day</div>
+      </div>
+    </div>
+    <div class="card" data-contact="dan maravilla" data-company="tothemarket.com" data-transcript="this is dan and dinner hello hey there it&#x27;s lina from netsuite i know i&#x27;m calling out of the blue here so i&#x27;ll show you why in thirty seconds then you can decide if you wanna continue cool okay great so we can find thousands of prospects who need branded merch for their upcoming trade shows using ai then we handle the outreach and book qualified sales meetings directly on your team&#x27;s calendar i&#x27;m not interested sorry thank you so much" data-date="2026-03-26">
+      <div class="card-header" onclick="toggleCard(13)">
+        <div class="card-title">
+          <span class="name">Dan Maravilla</span>
+          <span class="badge">33s</span>
+        </div>
+        <div class="card-subtitle">Chief Revenue Officer &middot; tothemarket.com</div>
+        <div class="card-meta">
+          <span>+18057324971</span>
+          <span>2026-03-26</span>
+        </div>
+      </div>
+      <div class="card-body" id="card-13">
+        <div class="transcript">this is dan and dinner hello hey there it&#x27;s lina from netsuite i know i&#x27;m calling out of the blue here so i&#x27;ll show you why in thirty seconds then you can decide if you wanna continue cool okay great so we can find thousands of prospects who need branded merch for their upcoming trade shows using ai then we handle the outreach and book qualified sales meetings directly on your team&#x27;s calendar i&#x27;m not interested sorry thank you so much</div>
+      </div>
+    </div>
+    <div class="card" data-contact="david closeouts" data-company="closeoutsworld.com" data-transcript="hello he seems like a hurt hello hey david it&#x27;s lina from netflix i know i&#x27;m calling you a little bit out of the blue here so i&#x27;ll just say why in thirty seconds then you can decide if you wanna continue is that cool what are you calling me for next week so the purpose of the call is that we are able to find thousands of prospects who need branded merch for their upcoming trade shows no no no no no no no shut up" data-date="2026-03-23">
+      <div class="card-header" onclick="toggleCard(14)">
+        <div class="card-title">
+          <span class="name">David Closeouts</span>
+          <span class="badge">27s</span>
+        </div>
+        <div class="card-subtitle">CEO &middot; closeoutsworld.com</div>
+        <div class="card-meta">
+          <span>+17542645369</span>
+          <span>2026-03-23</span>
+        </div>
+      </div>
+      <div class="card-body" id="card-14">
+        <div class="transcript">hello he seems like a hurt hello hey david it&#x27;s lina from netflix i know i&#x27;m calling you a little bit out of the blue here so i&#x27;ll just say why in thirty seconds then you can decide if you wanna continue is that cool what are you calling me for next week so the purpose of the call is that we are able to find thousands of prospects who need branded merch for their upcoming trade shows no no no no no no no shut up</div>
+      </div>
+    </div>
+    <div class="card" data-contact="denny watson" data-company="logonation.com" data-transcript="hello hi denny it&#x27;s lina from netsuite i know i&#x27;m calling a little bit out of the blue here so i&#x27;d tell you why in thirty seconds then you can decide if you wanna continue is that cool so far great so we can find thousands of prospects who need branded merch for their upcoming trade shows using ai then we handle the outreach and book qualified sales meetings directly on your team&#x27;s calendar and right now we&#x27;re working with top pro companies like swag dot com merch dot com and helping our clients close fortune one hundred level so just wanted to offer you a two week pilot so is tomorrow good for a short demo" data-date="2026-03-25">
+      <div class="card-header" onclick="toggleCard(15)">
+        <div class="card-title">
+          <span class="name">Denny Watson</span>
+          <span class="badge">42s</span>
+        </div>
+        <div class="card-subtitle">Correct Title &middot; logonation.com</div>
+        <div class="card-meta">
+          <span>+19893305612</span>
+          <span>2026-03-25</span>
+        </div>
+      </div>
+      <div class="card-body" id="card-15">
+        <div class="transcript">hello hi denny it&#x27;s lina from netsuite i know i&#x27;m calling a little bit out of the blue here so i&#x27;d tell you why in thirty seconds then you can decide if you wanna continue is that cool so far great so we can find thousands of prospects who need branded merch for their upcoming trade shows using ai then we handle the outreach and book qualified sales meetings directly on your team&#x27;s calendar and right now we&#x27;re working with top pro companies like swag dot com merch dot com and helping our clients close fortune one hundred level so just wanted to offer you a two week pilot so is tomorrow good for a short demo</div>
+      </div>
+    </div>
+    <div class="card" data-contact="dick schmidt" data-company="nationalpremium.com" data-transcript="hello hello hey dave it&#x27;s lina from netsuite i know i&#x27;m calling a little bit out of the blue here so i&#x27;ll just tell you why in thirty seconds then you can decide if you wanna continue is that cool who is this lina from next week what what is that exactly okay so we&#x27;re able to find thousands of prospects who need branded merch for their upcoming trade shows using ai the next thing we do is that we handle okay i&#x27;m okay" data-date="2026-03-24">
+      <div class="card-header" onclick="toggleCard(16)">
+        <div class="card-title">
+          <span class="name">Dick Schmidt</span>
+          <span class="badge">36s</span>
+        </div>
+        <div class="card-subtitle">President/CEO &middot; nationalpremium.com</div>
+        <div class="card-meta">
+          <span>+17724860426</span>
+          <span>2026-03-24</span>
+        </div>
+      </div>
+      <div class="card-body" id="card-16">
+        <div class="transcript">hello hello hey dave it&#x27;s lina from netsuite i know i&#x27;m calling a little bit out of the blue here so i&#x27;ll just tell you why in thirty seconds then you can decide if you wanna continue is that cool who is this lina from next week what what is that exactly okay so we&#x27;re able to find thousands of prospects who need branded merch for their upcoming trade shows using ai the next thing we do is that we handle okay i&#x27;m okay</div>
+      </div>
+    </div>
+    <div class="card" data-contact="don collins" data-company="legacygraphics.com" data-transcript="hello hello hey don it&#x27;s selina from hey i know i&#x27;m calling a little bit out of the blue here so i&#x27;ll just tell you the purpose of the call in thirty seconds then you can decide if you wanna continue is that cool yep thirty seconds i&#x27;m very busy sure okay so we&#x27;re able to find thousands of prospects who need branded merch for their upcoming trade shows using ai then we completely handle the outreach and book qualified sales meetings directly on your team&#x27;s calendar so they just have to take care of qualified leads and right now we&#x27;re working with top promo companies like swive dot com merch dot com and we&#x27;re helping our clients close fortune one hundred level so just wanted to offer you a two week pilot does tomorrow sound good for a short demo tomorrow the no if you wanna catch in about a week when things slow down a little bit i might can take a short demo but how much does it cost the qualified leads or whatever you do okay so for the demo then it&#x27;s between three to five k per month mainly our programs but the offer of the two week pilot is actually at half cost so you can evaluate the results risk free obviously and if you lend just one or two customers spending like a hundred k plus a year then it pays for itself so yeah i&#x27;m not sure about your availability you can go ahead and tell me and i&#x27;ll check our our schedule yeah i for the free spot mhmm i i am not interested right now thank you though i appreciate your time alright sure k thank you bye bye" data-date="2026-03-23">
+      <div class="card-header" onclick="toggleCard(17)">
+        <div class="card-title">
+          <span class="name">Don Collins</span>
+          <span class="badge">101s</span>
+        </div>
+        <div class="card-subtitle">CEO &middot; legacygraphics.com</div>
+        <div class="card-meta">
+          <span>+16786872980</span>
+          <span>2026-03-23</span>
+        </div>
+      </div>
+      <div class="card-body" id="card-17">
+        <div class="transcript">hello hello hey don it&#x27;s selina from hey i know i&#x27;m calling a little bit out of the blue here so i&#x27;ll just tell you the purpose of the call in thirty seconds then you can decide if you wanna continue is that cool yep thirty seconds i&#x27;m very busy sure okay so we&#x27;re able to find thousands of prospects who need branded merch for their upcoming trade shows using ai then we completely handle the outreach and book qualified sales meetings directly on your team&#x27;s calendar so they just have to take care of qualified leads and right now we&#x27;re working with top promo companies like swive dot com merch dot com and we&#x27;re helping our clients close fortune one hundred level so just wanted to offer you a two week pilot does tomorrow sound good for a short demo tomorrow the no if you wanna catch in about a week when things slow down a little bit i might can take a short demo but how much does it cost the qualified leads or whatever you do okay so for the demo then it&#x27;s between three to five k per month mainly our programs but the offer of the two week pilot is actually at half cost so you can evaluate the results risk free obviously and if you lend just one or two customers spending like a hundred k plus a year then it pays for itself so yeah i&#x27;m not sure about your availability you can go ahead and tell me and i&#x27;ll check our our schedule yeah i for the free spot mhmm i i am not interested right now thank you though i appreciate your time alright sure k thank you bye bye</div>
+      </div>
+    </div>
+    <div class="card" data-contact="eric grossman" data-company="metropak.com" data-transcript="hello hey eric it&#x27;s lina from netswik i know i&#x27;m calling a little bit out of the blue here so i&#x27;ll just tell you why in thirty sec lina lina i&#x27;m yeah i&#x27;m on vacation i don&#x27;t wanna talk sorry okay" data-date="2026-03-23">
+      <div class="card-header" onclick="toggleCard(18)">
+        <div class="card-title">
+          <span class="name">Eric Grossman</span>
+          <span class="badge">18s</span>
+        </div>
+        <div class="card-subtitle">Founder &amp; CEO | Sustainable, Eco-Friendly Packaging. Retail, eCommerce, Shipping, Promotional &amp; Gift &middot; metropak.com</div>
+        <div class="card-meta">
+          <span>+19178422650</span>
+          <span>2026-03-23</span>
+        </div>
+      </div>
+      <div class="card-body" id="card-18">
+        <div class="transcript">hello hey eric it&#x27;s lina from netswik i know i&#x27;m calling a little bit out of the blue here so i&#x27;ll just tell you why in thirty sec lina lina i&#x27;m yeah i&#x27;m on vacation i don&#x27;t wanna talk sorry okay</div>
+      </div>
+    </div>
+    <div class="card" data-contact="erik phillips" data-company="aiabranding.com" data-transcript="hi hello sir hey eric it&#x27;s lina from netsuite i know i&#x27;m calling out of the blue here so i&#x27;ll just tell you why in thirty seconds then you can decide if you wanna continue a call sure great so we can find thousands of prospects who need branded merch for their upcoming trade shows using ai then we handle the outreach and book qualified sales meetings directly on your team&#x27;s calendar and right now we&#x27;re working with leaders like spike dot com merge dot com and helping our clients close fortune one hundred level so just wanted to offer you a two week pilot is tomorrow good for a short demo tomorrow&#x27;s not good but do you wanna send me an email i can look at it and then go from there well honestly rick emails tend to go to spam so maybe if tomorrow is not good then let&#x27;s do monday and in the meantime i can send you a few things and then if you like everything then you can just join the meeting and then how does that sound just send me an email first and then we&#x27;ll go from there alright i see okay rick what&#x27;s your email it&#x27;s e r i k at a i a okay a i a branding dot com branding dot com okay but you&#x27;re you&#x27;re still against the idea of having a meeting on monday if you like everything that&#x27;s going on i just i just don&#x27;t know my schedule right now so i just i just don&#x27;t know my schedule so send me an email and we&#x27;ll go from there so i&#x27;m i&#x27;m not in my office right now and i&#x27;m i&#x27;m traveling so let me let me get an email from you and then i&#x27;ll look at it and we&#x27;ll see if it makes sense to set up a meeting i&#x27;ll send you the email either way but if you would like to reschedule then you&#x27;re welcome to do that how does that sound okay sounds good i&#x27;ll look at your email thank you" data-date="2026-03-27">
+      <div class="card-header" onclick="toggleCard(19)">
+        <div class="card-title">
+          <span class="name">Erik Phillips</span>
+          <span class="badge">119s</span>
+        </div>
+        <div class="card-subtitle">Correct Title &middot; aiabranding.com</div>
+        <div class="card-meta">
+          <span>+12483880302</span>
+          <span>2026-03-27</span>
+        </div>
+      </div>
+      <div class="card-body" id="card-19">
+        <div class="transcript">hi hello sir hey eric it&#x27;s lina from netsuite i know i&#x27;m calling out of the blue here so i&#x27;ll just tell you why in thirty seconds then you can decide if you wanna continue a call sure great so we can find thousands of prospects who need branded merch for their upcoming trade shows using ai then we handle the outreach and book qualified sales meetings directly on your team&#x27;s calendar and right now we&#x27;re working with leaders like spike dot com merge dot com and helping our clients close fortune one hundred level so just wanted to offer you a two week pilot is tomorrow good for a short demo tomorrow&#x27;s not good but do you wanna send me an email i can look at it and then go from there well honestly rick emails tend to go to spam so maybe if tomorrow is not good then let&#x27;s do monday and in the meantime i can send you a few things and then if you like everything then you can just join the meeting and then how does that sound just send me an email first and then we&#x27;ll go from there alright i see okay rick what&#x27;s your email it&#x27;s e r i k at a i a okay a i a branding dot com branding dot com okay but you&#x27;re you&#x27;re still against the idea of having a meeting on monday if you like everything that&#x27;s going on i just i just don&#x27;t know my schedule right now so i just i just don&#x27;t know my schedule so send me an email and we&#x27;ll go from there so i&#x27;m i&#x27;m not in my office right now and i&#x27;m i&#x27;m traveling so let me let me get an email from you and then i&#x27;ll look at it and we&#x27;ll see if it makes sense to set up a meeting i&#x27;ll send you the email either way but if you would like to reschedule then you&#x27;re welcome to do that how does that sound okay sounds good i&#x27;ll look at your email thank you</div>
+      </div>
+    </div>
+    <div class="card" data-contact="erika miscio lawney, mba" data-company="avpromos.com" data-transcript="this is erica hello hey erica it&#x27;s lina from netswik i know i&#x27;m calling out of the blue here so i&#x27;ll just tell you why in thirty seconds then you can decide if you wanna continue cool i&#x27;m sorry where are you calling from next week what is that about okay so we can find thousands of prospects who need branded merch for their upcoming trade shows using ai then we handle the outreach and book qualified sales meetings directly on your team&#x27;s calendar and right now we&#x27;re working with leaders like swai dot com merch dot com and helping our clients close fortune one hundred level so just wanted to offer you a two week pilot is monday good for a short demo let me see sure okay that&#x27;s great so can i get your email sure it&#x27;s erika e r i k a at a v promo at yeah a v promos dot com a b okay promos dot com and a as in apple a as in apple let&#x27;s make sure you have it right it&#x27;s a as in apple v as in victor yeah yeah yeah i see okay okay and okay before i let you go erica i just have three quick five questions just to make the call relevant and make sure we&#x27;re a fit ready yep okay so first thing what are you currently doing for lead generation word-of-mouth it&#x27;s the way i&#x27;ve done my company since i started in nineteen ninety nine okay i see and what what do you think you could improve about this current process like would you say you would want like more volume of leads or more qualified leads let&#x27;s say well the optimum would be more volume of qualified leads the re i don&#x27;t do i don&#x27;t really advertise we have a website but it&#x27;s very like limited because mhmm of the way we work i don&#x27;t want just like random general public people reaching out so i&#x27;m i&#x27;m i&#x27;m skeptical yeah yeah yeah i see so you would actually i&#x27;m i&#x27;m skeptical mhmm but i wanna see what you have to say sure that&#x27;s good to know and the last question would be so our programs like they typically start at around three thousand to five thousand a month so assuming the roi is there and every oh yeah not happening no not happening okay alright thanks for your time you can take me off your list okay okay you have a good day alright thanks you too bye bye" data-date="2026-03-27">
+      <div class="card-header" onclick="toggleCard(20)">
+        <div class="card-title">
+          <span class="name">Erika Miscio Lawney, MBA</span>
+          <span class="badge">169s</span>
+        </div>
+        <div class="card-subtitle">Correct Title &middot; avpromos.com</div>
+        <div class="card-meta">
+          <span>+13057727287</span>
+          <span>2026-03-27</span>
+        </div>
+      </div>
+      <div class="card-body" id="card-20">
+        <div class="transcript">this is erica hello hey erica it&#x27;s lina from netswik i know i&#x27;m calling out of the blue here so i&#x27;ll just tell you why in thirty seconds then you can decide if you wanna continue cool i&#x27;m sorry where are you calling from next week what is that about okay so we can find thousands of prospects who need branded merch for their upcoming trade shows using ai then we handle the outreach and book qualified sales meetings directly on your team&#x27;s calendar and right now we&#x27;re working with leaders like swai dot com merch dot com and helping our clients close fortune one hundred level so just wanted to offer you a two week pilot is monday good for a short demo let me see sure okay that&#x27;s great so can i get your email sure it&#x27;s erika e r i k a at a v promo at yeah a v promos dot com a b okay promos dot com and a as in apple a as in apple let&#x27;s make sure you have it right it&#x27;s a as in apple v as in victor yeah yeah yeah i see okay okay and okay before i let you go erica i just have three quick five questions just to make the call relevant and make sure we&#x27;re a fit ready yep okay so first thing what are you currently doing for lead generation word-of-mouth it&#x27;s the way i&#x27;ve done my company since i started in nineteen ninety nine okay i see and what what do you think you could improve about this current process like would you say you would want like more volume of leads or more qualified leads let&#x27;s say well the optimum would be more volume of qualified leads the re i don&#x27;t do i don&#x27;t really advertise we have a website but it&#x27;s very like limited because mhmm of the way we work i don&#x27;t want just like random general public people reaching out so i&#x27;m i&#x27;m i&#x27;m skeptical yeah yeah yeah i see so you would actually i&#x27;m i&#x27;m skeptical mhmm but i wanna see what you have to say sure that&#x27;s good to know and the last question would be so our programs like they typically start at around three thousand to five thousand a month so assuming the roi is there and every oh yeah not happening no not happening okay alright thanks for your time you can take me off your list okay okay you have a good day alright thanks you too bye bye</div>
+      </div>
+    </div>
+    <div class="card" data-contact="ernie beckham" data-company="aesmktg.com" data-transcript="hello hello ernie yes hey it&#x27;s lina from netsuite i know i&#x27;m calling you a little bit out of the blue here so i&#x27;ll just tell you the purpose of the call in thirty seconds then you can decide if you wanna continue is that cool with you alright i&#x27;m i&#x27;m already probably not interested what do you need so we&#x27;re able to find thousands of prospects who need branded merch for their upcoming trade shows using ai then we completely handle the outreach and book qualified sales meetings directly on your team&#x27;s calendar so they just have to take care of qualified leads okay not interested" data-date="2026-03-23">
+      <div class="card-header" onclick="toggleCard(21)">
+        <div class="card-title">
+          <span class="name">Ernie Beckham</span>
+          <span class="badge">41s</span>
+        </div>
+        <div class="card-subtitle">President/CEO &middot; aesmktg.com</div>
+        <div class="card-meta">
+          <span>+19513230379</span>
+          <span>2026-03-23</span>
+        </div>
+      </div>
+      <div class="card-body" id="card-21">
+        <div class="transcript">hello hello ernie yes hey it&#x27;s lina from netsuite i know i&#x27;m calling you a little bit out of the blue here so i&#x27;ll just tell you the purpose of the call in thirty seconds then you can decide if you wanna continue is that cool with you alright i&#x27;m i&#x27;m already probably not interested what do you need so we&#x27;re able to find thousands of prospects who need branded merch for their upcoming trade shows using ai then we completely handle the outreach and book qualified sales meetings directly on your team&#x27;s calendar so they just have to take care of qualified leads okay not interested</div>
+      </div>
+    </div>
+    <div class="card" data-contact="eugene maresh" data-company="siwspromos.com" data-transcript="hello yeah jen hello yeah hey it&#x27;s lina from netsuite i know i&#x27;m calling you a little bit out of the blue here so i&#x27;ll just tell you the purpose of the call in thirty seconds then you can decide if you wanna continue is that cool k right so here&#x27;s the thing so we are able to find thousands of prospects who need branded merch for their upcoming trade shows using ai then next thing we do is that we handle the outreach and book qualified sales meetings directly on your team&#x27;s calendar so they just have to take care solely of qualified leads and right now we&#x27;re working with top promo companies like swag dot com merge dot com and helping our clients close fortune one hundred level so i just wanted to offer you a two week pilot does tomorrow sound good for a short demo so here&#x27;s my problem it&#x27;s just me i&#x27;m the sales guy and i&#x27;m i&#x27;m busy as a bee so i couldn&#x27;t i couldn&#x27;t handle the i couldn&#x27;t handle the volume of alright leads you&#x27;d you&#x27;d be bringing me it&#x27;d be a waste of your your time and my time alright understood i appreciate the phone call though have a good day sure have a good day bye bye bye" data-date="2026-03-23">
+      <div class="card-header" onclick="toggleCard(22)">
+        <div class="card-title">
+          <span class="name">Eugene Maresh</span>
+          <span class="badge">77s</span>
+        </div>
+        <div class="card-subtitle">Co-Founder (Promotional Products, Logo Apparel, Branded Merch) &middot; siwspromos.com</div>
+        <div class="card-meta">
+          <span>+17023279042</span>
+          <span>2026-03-23</span>
+        </div>
+      </div>
+      <div class="card-body" id="card-22">
+        <div class="transcript">hello yeah jen hello yeah hey it&#x27;s lina from netsuite i know i&#x27;m calling you a little bit out of the blue here so i&#x27;ll just tell you the purpose of the call in thirty seconds then you can decide if you wanna continue is that cool k right so here&#x27;s the thing so we are able to find thousands of prospects who need branded merch for their upcoming trade shows using ai then next thing we do is that we handle the outreach and book qualified sales meetings directly on your team&#x27;s calendar so they just have to take care solely of qualified leads and right now we&#x27;re working with top promo companies like swag dot com merge dot com and helping our clients close fortune one hundred level so i just wanted to offer you a two week pilot does tomorrow sound good for a short demo so here&#x27;s my problem it&#x27;s just me i&#x27;m the sales guy and i&#x27;m i&#x27;m busy as a bee so i couldn&#x27;t i couldn&#x27;t handle the i couldn&#x27;t handle the volume of alright leads you&#x27;d you&#x27;d be bringing me it&#x27;d be a waste of your your time and my time alright understood i appreciate the phone call though have a good day sure have a good day bye bye bye</div>
+      </div>
+    </div>
+    <div class="card" data-contact="fabricio morales" data-company="intivity.com" data-transcript="just for hey fabrizio it&#x27;s lina from netsuite i know i&#x27;m calling out of the blue here so i&#x27;ll just tell you why in thirty seconds then you can decide if you wanna continue cool well i wanted to let you know we&#x27;re about to go live on netsuite here within the next few days so i&#x27;m not sure if you&#x27;re calling about that or something else i&#x27;m sorry could you repeat that that was a little i didn&#x27;t hear you properly you&#x27;re about to live what as as i said we&#x27;re we are going to go live on netsuite so i don&#x27;t know if you&#x27;re calling about that or what oh no that&#x27;s not netsuite i&#x27;m calling from netsuite it&#x27;s spelled like so n e t s w i c k next week okay yeah so let&#x27;s keep it short and quick so we can find thousands of prospects who need branded merch for their upcoming trade shows using ai then we handle the outreach and book qualified sales meetings directly on your team&#x27;s calendar and right now we&#x27;re working with leaders like swag dot com merch dot com and helping our clients close fortune one hundred level so just wanted to offer you a two week pilot is tomorrow good for a short demo not at this time but thank you for reaching out" data-date="2026-03-26">
+      <div class="card-header" onclick="toggleCard(23)">
+        <div class="card-title">
+          <span class="name">Fabricio Morales</span>
+          <span class="badge">94s</span>
+        </div>
+        <div class="card-subtitle">President, CEO &middot; intivity.com</div>
+        <div class="card-meta">
+          <span>+15857376638</span>
+          <span>2026-03-26</span>
+        </div>
+      </div>
+      <div class="card-body" id="card-23">
+        <div class="transcript">just for hey fabrizio it&#x27;s lina from netsuite i know i&#x27;m calling out of the blue here so i&#x27;ll just tell you why in thirty seconds then you can decide if you wanna continue cool well i wanted to let you know we&#x27;re about to go live on netsuite here within the next few days so i&#x27;m not sure if you&#x27;re calling about that or something else i&#x27;m sorry could you repeat that that was a little i didn&#x27;t hear you properly you&#x27;re about to live what as as i said we&#x27;re we are going to go live on netsuite so i don&#x27;t know if you&#x27;re calling about that or what oh no that&#x27;s not netsuite i&#x27;m calling from netsuite it&#x27;s spelled like so n e t s w i c k next week okay yeah so let&#x27;s keep it short and quick so we can find thousands of prospects who need branded merch for their upcoming trade shows using ai then we handle the outreach and book qualified sales meetings directly on your team&#x27;s calendar and right now we&#x27;re working with leaders like swag dot com merch dot com and helping our clients close fortune one hundred level so just wanted to offer you a two week pilot is tomorrow good for a short demo not at this time but thank you for reaching out</div>
+      </div>
+    </div>
+    <div class="card" data-contact="glenn chase" data-company="avalonpromo.com" data-transcript="this is glenn hey glenn it&#x27;s lina from netsuite i know i&#x27;m calling out of the blue here so i&#x27;ll just tell you why in thirty seconds then you can decide if you wanna continue cool go ahead sure so we can find thousands of prospects who need branded merch for their upcoming trade shows using ai then we handle the outreach and book qualified sales meetings directly on your team&#x27;s calendar and right now we&#x27;re working with leaders like swag dot com merch dot com and helping our clients close fortune one hundred level so just wanted to offer you a two week pilot is tomorrow good for a short demo no but thank you very much i appreciate it really isn&#x27;t up my alley for what we&#x27;re trying to keep a little small business you know without growing i don&#x27;t i don&#x27;t need to grow right now i don&#x27;t need any extra honestly but thank you alrighty k good luck sure good bye okay yeah thank you good you have a good day bye hey you too bye" data-date="2026-03-27">
+      <div class="card-header" onclick="toggleCard(24)">
+        <div class="card-title">
+          <span class="name">Glenn Chase</span>
+          <span class="badge">72s</span>
+        </div>
+        <div class="card-subtitle">Correct Title &middot; avalonpromo.com</div>
+        <div class="card-meta">
+          <span>+16039699749</span>
+          <span>2026-03-27</span>
+        </div>
+      </div>
+      <div class="card-body" id="card-24">
+        <div class="transcript">this is glenn hey glenn it&#x27;s lina from netsuite i know i&#x27;m calling out of the blue here so i&#x27;ll just tell you why in thirty seconds then you can decide if you wanna continue cool go ahead sure so we can find thousands of prospects who need branded merch for their upcoming trade shows using ai then we handle the outreach and book qualified sales meetings directly on your team&#x27;s calendar and right now we&#x27;re working with leaders like swag dot com merch dot com and helping our clients close fortune one hundred level so just wanted to offer you a two week pilot is tomorrow good for a short demo no but thank you very much i appreciate it really isn&#x27;t up my alley for what we&#x27;re trying to keep a little small business you know without growing i don&#x27;t i don&#x27;t need to grow right now i don&#x27;t need any extra honestly but thank you alrighty k good luck sure good bye okay yeah thank you good you have a good day bye hey you too bye</div>
+      </div>
+    </div>
+    <div class="card" data-contact="jason fullen" data-company="mozpromo.com" data-transcript="hey jason it&#x27;s lina from i know i&#x27;m calling out of blue here and i just told you why and if you wanna continue cool wait wait wait what is it who is this what what what is this it&#x27;s lina from netswik netswitch i don&#x27;t know what that is no no not netswik it&#x27;s netswik it&#x27;s spelled like so n e t s w i c k next week what&#x27;s this in regards to so what we do is that we can find thousands of prospects who need branded merch for their upcoming trade shows using ai then we handle the yeah no i think yeah we&#x27;re good we don&#x27;t need any we do everything in house anyways so we&#x27;re we&#x27;re at full capacity anyways thank you" data-date="2026-03-27">
+      <div class="card-header" onclick="toggleCard(25)">
+        <div class="card-title">
+          <span class="name">Jason Fullen</span>
+          <span class="badge">52s</span>
+        </div>
+        <div class="card-subtitle">Correct Title &middot; mozpromo.com</div>
+        <div class="card-meta">
+          <span>+18017356945</span>
+          <span>2026-03-27</span>
+        </div>
+      </div>
+      <div class="card-body" id="card-25">
+        <div class="transcript">hey jason it&#x27;s lina from i know i&#x27;m calling out of blue here and i just told you why and if you wanna continue cool wait wait wait what is it who is this what what what is this it&#x27;s lina from netswik netswitch i don&#x27;t know what that is no no not netswik it&#x27;s netswik it&#x27;s spelled like so n e t s w i c k next week what&#x27;s this in regards to so what we do is that we can find thousands of prospects who need branded merch for their upcoming trade shows using ai then we handle the yeah no i think yeah we&#x27;re good we don&#x27;t need any we do everything in house anyways so we&#x27;re we&#x27;re at full capacity anyways thank you</div>
+      </div>
+    </div>
+    <div class="card" data-contact="jaya yurchisin" data-company="promopsg.com" data-transcript="hello hey jaya it&#x27;s lina from hi i know i&#x27;m calling a little bit out of the blue here so i&#x27;ll just tell you why in thirty seconds then you can decide" data-date="2026-03-23">
+      <div class="card-header" onclick="toggleCard(26)">
+        <div class="card-title">
+          <span class="name">Jaya Yurchisin</span>
+          <span class="badge">14s</span>
+        </div>
+        <div class="card-subtitle">President and Founder &middot; promopsg.com</div>
+        <div class="card-meta">
+          <span>+14407592585</span>
+          <span>2026-03-23</span>
+        </div>
+      </div>
+      <div class="card-body" id="card-26">
+        <div class="transcript">hello hey jaya it&#x27;s lina from hi i know i&#x27;m calling a little bit out of the blue here so i&#x27;ll just tell you why in thirty seconds then you can decide</div>
+      </div>
+    </div>
+    <div class="card" data-contact="jill waldorf naviasky" data-company="thewaldorfco.com" data-transcript="hello hello hey joe it&#x27;s lina from netsuite i know i&#x27;m calling out of the blue here so i&#x27;ll just tell you why in thirty seconds then you can decide if you wanna continue cool go ahead sure so we can find thousands of prospects who need branded merch for their upcoming trade shows using ai then we handle the outreach and book qualified sales meetings directly on your team&#x27;s calendar and right now we&#x27;re working with leaders like swag dot com merge dot com and helping our clients close fortune one hundred level so just wanted to offer you a two week panel is monday good for a short demo no thank you" data-date="2026-03-27">
+      <div class="card-header" onclick="toggleCard(27)">
+        <div class="card-title">
+          <span class="name">Jill Waldorf Naviasky</span>
+          <span class="badge">42s</span>
+        </div>
+        <div class="card-subtitle">Correct Title &middot; thewaldorfco.com</div>
+        <div class="card-meta">
+          <span>+15162973363</span>
+          <span>2026-03-27</span>
+        </div>
+      </div>
+      <div class="card-body" id="card-27">
+        <div class="transcript">hello hello hey joe it&#x27;s lina from netsuite i know i&#x27;m calling out of the blue here so i&#x27;ll just tell you why in thirty seconds then you can decide if you wanna continue cool go ahead sure so we can find thousands of prospects who need branded merch for their upcoming trade shows using ai then we handle the outreach and book qualified sales meetings directly on your team&#x27;s calendar and right now we&#x27;re working with leaders like swag dot com merge dot com and helping our clients close fortune one hundred level so just wanted to offer you a two week panel is monday good for a short demo no thank you</div>
+      </div>
+    </div>
+    <div class="card" data-contact="john kleibert" data-company="excitepromos.com" data-transcript="hello hey john it&#x27;s lina from netsuite i know i&#x27;m calling out of blue here so i&#x27;ll just tell you why in thirty seconds then you can decide if you wanna continue pardon me from who it&#x27;s lina from netsuite netsuite is spelled like so n e t s what w i c k what is that so what we do is that we can find thousands of prospects who need branded merch for their upcoming trade shows using ai no i don&#x27;t i don&#x27;t like ai okay" data-date="2026-03-27">
+      <div class="card-header" onclick="toggleCard(28)">
+        <div class="card-title">
+          <span class="name">John Kleibert</span>
+          <span class="badge">60s</span>
+        </div>
+        <div class="card-subtitle">Correct Title &middot; excitepromos.com</div>
+        <div class="card-meta">
+          <span>+19186716222</span>
+          <span>2026-03-27</span>
+        </div>
+      </div>
+      <div class="card-body" id="card-28">
+        <div class="transcript">hello hey john it&#x27;s lina from netsuite i know i&#x27;m calling out of blue here so i&#x27;ll just tell you why in thirty seconds then you can decide if you wanna continue pardon me from who it&#x27;s lina from netsuite netsuite is spelled like so n e t s what w i c k what is that so what we do is that we can find thousands of prospects who need branded merch for their upcoming trade shows using ai no i don&#x27;t i don&#x27;t like ai okay</div>
+      </div>
+    </div>
+    <div class="card" data-contact="kelly d&#x27;amico" data-company="identitygear.com" data-transcript="this is kelly hello hey kelly it&#x27;s is this kelly yes hi it&#x27;s lina from next week i know i&#x27;m calling a little bit out of the blue here so i&#x27;ll just tell you the purpose of the call in thirty seconds then you can decide if you wanna continue is that cool yeah what is that how are you like i yeah i&#x27;m like getting ready to meet a client what is this about yeah sure so we&#x27;re able to find thousands of prospects who need branded merch for their upcoming trade shows and we use ai then we handle completely the outreach and book qualified sales meetings directly on your case number no i&#x27;m good thank you though" data-date="2026-03-23">
+      <div class="card-header" onclick="toggleCard(29)">
+        <div class="card-title">
+          <span class="name">Kelly D&#x27;Amico</span>
+          <span class="badge">43s</span>
+        </div>
+        <div class="card-subtitle">President/Owner of Identity Gear &middot; identitygear.com</div>
+        <div class="card-meta">
+          <span>+18565244643</span>
+          <span>2026-03-23</span>
+        </div>
+      </div>
+      <div class="card-body" id="card-29">
+        <div class="transcript">this is kelly hello hey kelly it&#x27;s is this kelly yes hi it&#x27;s lina from next week i know i&#x27;m calling a little bit out of the blue here so i&#x27;ll just tell you the purpose of the call in thirty seconds then you can decide if you wanna continue is that cool yeah what is that how are you like i yeah i&#x27;m like getting ready to meet a client what is this about yeah sure so we&#x27;re able to find thousands of prospects who need branded merch for their upcoming trade shows and we use ai then we handle completely the outreach and book qualified sales meetings directly on your case number no i&#x27;m good thank you though</div>
+      </div>
+    </div>
+    <div class="card" data-contact="leslie baker" data-company="broadwaymarketing.com" data-transcript="hello hey leslie it&#x27;s lina from netsuite i know i&#x27;m calling a little bit out of the blue here so i&#x27;ll just tell you why in thirty seconds then you can decide if you wanna continue is that cool okay go ahead right so we can find thousands of prospects who need branded merch for their upcoming trade shows using ai then we handle the outreach and book qualified sales meetings directly on your team&#x27;s calendar and right now we&#x27;re working with top promo companies like swag dot com merch dot com and we&#x27;re helping our clients close fortune one hundred level so i just wanted to offer you a two week pilot so is tomorrow good for a short demo yeah no i&#x27;m not interested thank you" data-date="2026-03-25">
+      <div class="card-header" onclick="toggleCard(30)">
+        <div class="card-title">
+          <span class="name">Leslie Baker</span>
+          <span class="badge">44s</span>
+        </div>
+        <div class="card-subtitle">Correct Title &middot; broadwaymarketing.com</div>
+        <div class="card-meta">
+          <span>+15189288295</span>
+          <span>2026-03-25</span>
+        </div>
+      </div>
+      <div class="card-body" id="card-30">
+        <div class="transcript">hello hey leslie it&#x27;s lina from netsuite i know i&#x27;m calling a little bit out of the blue here so i&#x27;ll just tell you why in thirty seconds then you can decide if you wanna continue is that cool okay go ahead right so we can find thousands of prospects who need branded merch for their upcoming trade shows using ai then we handle the outreach and book qualified sales meetings directly on your team&#x27;s calendar and right now we&#x27;re working with top promo companies like swag dot com merch dot com and we&#x27;re helping our clients close fortune one hundred level so i just wanted to offer you a two week pilot so is tomorrow good for a short demo yeah no i&#x27;m not interested thank you</div>
+      </div>
+    </div>
+    <div class="card" data-contact="linda knierim" data-company="kahny.com" data-transcript="a zucchini printing hey linda it&#x27;s lina from netflix yes it is i know i&#x27;m calling a little bit out of the blue here so i&#x27;ll tell you the purpose of the call in thirty seconds then you can decide if you wanna continue is that cool i&#x27;m sorry who who who is this lina from netsuite okay alright so we&#x27;re able to find thousands of prospects who need branded merch for their upcoming trade shows using ai then we completely handle the outreach and book qualified sales meetings directly on your team&#x27;s calendar so they just have to take care of qualified leads and right now we&#x27;re working with top promo companies like swag dot com merch dot com and we&#x27;re helping our clients close fortune one hundred level so just wanted to offer you a two week pilot so does tomorrow sound good for sure nope no nope nope not interested appreciate the call though thanks so much have a good day bye" data-date="2026-03-23">
+      <div class="card-header" onclick="toggleCard(31)">
+        <div class="card-title">
+          <span class="name">Linda Knierim</span>
+          <span class="badge">60s</span>
+        </div>
+        <div class="card-subtitle">President &middot; kahny.com</div>
+        <div class="card-meta">
+          <span>+15132512911</span>
+          <span>2026-03-23</span>
+        </div>
+      </div>
+      <div class="card-body" id="card-31">
+        <div class="transcript">a zucchini printing hey linda it&#x27;s lina from netflix yes it is i know i&#x27;m calling a little bit out of the blue here so i&#x27;ll tell you the purpose of the call in thirty seconds then you can decide if you wanna continue is that cool i&#x27;m sorry who who who is this lina from netsuite okay alright so we&#x27;re able to find thousands of prospects who need branded merch for their upcoming trade shows using ai then we completely handle the outreach and book qualified sales meetings directly on your team&#x27;s calendar so they just have to take care of qualified leads and right now we&#x27;re working with top promo companies like swag dot com merch dot com and we&#x27;re helping our clients close fortune one hundred level so just wanted to offer you a two week pilot so does tomorrow sound good for sure nope no nope nope not interested appreciate the call though thanks so much have a good day bye</div>
+      </div>
+    </div>
+    <div class="card" data-contact="mark copans - b.a.s.i." data-company="printyourlogo.net" data-transcript="tamam tamam hey mark it&#x27;s selena from netswik i know i&#x27;m calling a little bit out of the blue here so i&#x27;ll just show you the purpose of the call" data-date="2026-03-23">
+      <div class="card-header" onclick="toggleCard(32)">
+        <div class="card-title">
+          <span class="name">Mark Copans - B.A.S.I.</span>
+          <span class="badge">13s</span>
+        </div>
+        <div class="card-subtitle">President &middot; printyourlogo.net</div>
+        <div class="card-meta">
+          <span>+19178466770</span>
+          <span>2026-03-23</span>
+        </div>
+      </div>
+      <div class="card-body" id="card-32">
+        <div class="transcript">tamam tamam hey mark it&#x27;s selena from netswik i know i&#x27;m calling a little bit out of the blue here so i&#x27;ll just show you the purpose of the call</div>
+      </div>
+    </div>
+    <div class="card" data-contact="mark matatov" data-company="graphicsfordoctors.com" data-transcript="hello hello mark hey yes it&#x27;s lina from netswik i know i&#x27;m calling out of the blue here so i&#x27;ll just tell you why in thirty seconds then you can decide if you wanna continue cool where are you from netswick it&#x27;s spelled like so n e t s w i c k netswick okay what can i help you with so we can find thousands of prospects who need branded merch for their upcoming trade shows using ai then we handle the outreach and book qualified sales meetings directly on your team&#x27;s calendar and right now we&#x27;re working with leaders like swag dot com merch dot com and helping our clients close fortune one hundred level so just wanted to offer you a two week pilot is monday good for a short demo i i appreciate the call but i really i don&#x27;t really deal much with swag or any of those things so this wouldn&#x27;t really help me in any way okay okay perfect thanks for your time though thank you" data-date="2026-03-27">
+      <div class="card-header" onclick="toggleCard(33)">
+        <div class="card-title">
+          <span class="name">Mark Matatov</span>
+          <span class="badge">66s</span>
+        </div>
+        <div class="card-subtitle">Correct Title &middot; graphicsfordoctors.com</div>
+        <div class="card-meta">
+          <span>+19174537589</span>
+          <span>2026-03-27</span>
+        </div>
+      </div>
+      <div class="card-body" id="card-33">
+        <div class="transcript">hello hello mark hey yes it&#x27;s lina from netswik i know i&#x27;m calling out of the blue here so i&#x27;ll just tell you why in thirty seconds then you can decide if you wanna continue cool where are you from netswick it&#x27;s spelled like so n e t s w i c k netswick okay what can i help you with so we can find thousands of prospects who need branded merch for their upcoming trade shows using ai then we handle the outreach and book qualified sales meetings directly on your team&#x27;s calendar and right now we&#x27;re working with leaders like swag dot com merch dot com and helping our clients close fortune one hundred level so just wanted to offer you a two week pilot is monday good for a short demo i i appreciate the call but i really i don&#x27;t really deal much with swag or any of those things so this wouldn&#x27;t really help me in any way okay okay perfect thanks for your time though thank you</div>
+      </div>
+    </div>
+    <div class="card" data-contact="mark siegel" data-company="identity-links.com" data-transcript="may i help you hello hey mark it&#x27;s lina from netsuite i know i&#x27;m calling a little bit out of the blue here so i&#x27;ll just tell you why in thirty seconds then you can decide if you wanna continue is that cool alright hello can i help you i didn&#x27;t hear you okay so i was saying did you hear i&#x27;m with who am i and who am i with so it&#x27;s lina from next week yeah okay so yes what we do is that we&#x27;re able to find thousands of prospects who need branded merch for their upcoming trade shows using ai then we completely handle the outreach and book qualified sales meetings directly on your team&#x27;s calendar so they will just have to take care of qualified leads instead of wasting time on cold calling etcetera and right now we&#x27;re working with top promo companies like swine dot com merge dot com and we&#x27;re helping our clients close fortune one hundred level so just wanted to offer you a two week pilot so does tomorrow sound good for a short demo how long does the short demo take about fifteen minutes probably a max of twenty but usually it&#x27;s around fifteen minutes you know what can you send me your contact information i&#x27;m actually out of the office now and then i can give you a callback with your phone number okay it&#x27;s mark at identity links dot com i understand mark but that&#x27;s that&#x27;s a job number so i it&#x27;s not mine i do not own it so i&#x27;d rather you know create a meeting for you like book a meeting for you and then if the timing is not the right time for you then you could just ask us to reschedule that would be better no i&#x27;d rather just have your information first as some information about what your company does then i then you can call me back if you can write it in a in an email form of what you&#x27;re offering then i can get back to you alright can i get your email mark m a r k at identity links dot com alright okay thank you i&#x27;ll shoot you an email right now thank you have a good day okay bye" data-date="2026-03-23">
+      <div class="card-header" onclick="toggleCard(34)">
+        <div class="card-title">
+          <span class="name">Mark Siegel</span>
+          <span class="badge">137s</span>
+        </div>
+        <div class="card-subtitle">owner &middot; identity-links.com</div>
+        <div class="card-meta">
+          <span>+17733291096</span>
+          <span>2026-03-23</span>
+        </div>
+      </div>
+      <div class="card-body" id="card-34">
+        <div class="transcript">may i help you hello hey mark it&#x27;s lina from netsuite i know i&#x27;m calling a little bit out of the blue here so i&#x27;ll just tell you why in thirty seconds then you can decide if you wanna continue is that cool alright hello can i help you i didn&#x27;t hear you okay so i was saying did you hear i&#x27;m with who am i and who am i with so it&#x27;s lina from next week yeah okay so yes what we do is that we&#x27;re able to find thousands of prospects who need branded merch for their upcoming trade shows using ai then we completely handle the outreach and book qualified sales meetings directly on your team&#x27;s calendar so they will just have to take care of qualified leads instead of wasting time on cold calling etcetera and right now we&#x27;re working with top promo companies like swine dot com merge dot com and we&#x27;re helping our clients close fortune one hundred level so just wanted to offer you a two week pilot so does tomorrow sound good for a short demo how long does the short demo take about fifteen minutes probably a max of twenty but usually it&#x27;s around fifteen minutes you know what can you send me your contact information i&#x27;m actually out of the office now and then i can give you a callback with your phone number okay it&#x27;s mark at identity links dot com i understand mark but that&#x27;s that&#x27;s a job number so i it&#x27;s not mine i do not own it so i&#x27;d rather you know create a meeting for you like book a meeting for you and then if the timing is not the right time for you then you could just ask us to reschedule that would be better no i&#x27;d rather just have your information first as some information about what your company does then i then you can call me back if you can write it in a in an email form of what you&#x27;re offering then i can get back to you alright can i get your email mark m a r k at identity links dot com alright okay thank you i&#x27;ll shoot you an email right now thank you have a good day okay bye</div>
+      </div>
+    </div>
+    <div class="card" data-contact="michael antonorsi" data-company="chuaochocolatier.com" data-transcript="hello hello michael yeah hey it&#x27;s lida from netsuite i know i&#x27;m calling you a little bit out of the blue here so i&#x27;ll just tell you why in thirty seconds then you can decide if you wanna continue is that cool i really don&#x27;t wanna continue sorry" data-date="2026-03-23">
+      <div class="card-header" onclick="toggleCard(35)">
+        <div class="card-title">
+          <span class="name">Michael Antonorsi</span>
+          <span class="badge">23s</span>
+        </div>
+        <div class="card-subtitle">Chief Joy Activator and President &middot; chuaochocolatier.com</div>
+        <div class="card-meta">
+          <span>+17608155542</span>
+          <span>2026-03-23</span>
+        </div>
+      </div>
+      <div class="card-body" id="card-35">
+        <div class="transcript">hello hello michael yeah hey it&#x27;s lida from netsuite i know i&#x27;m calling you a little bit out of the blue here so i&#x27;ll just tell you why in thirty seconds then you can decide if you wanna continue is that cool i really don&#x27;t wanna continue sorry</div>
+      </div>
+    </div>
+    <div class="card" data-contact="michael rase" data-company="spectrumadvertising.com" data-transcript="this is michael michael yes hey it&#x27;s lina from netflix i know i&#x27;m calling you a little bit out of the blue here so i&#x27;ll tell you the purpose of the call in thirty seconds then you can decide if you wanna continue is that cool no thank you though" data-date="2026-03-23">
+      <div class="card-header" onclick="toggleCard(36)">
+        <div class="card-title">
+          <span class="name">Michael Rase</span>
+          <span class="badge">22s</span>
+        </div>
+        <div class="card-subtitle">President &middot; spectrumadvertising.com</div>
+        <div class="card-meta">
+          <span>+13036193248</span>
+          <span>2026-03-23</span>
+        </div>
+      </div>
+      <div class="card-body" id="card-36">
+        <div class="transcript">this is michael michael yes hey it&#x27;s lina from netflix i know i&#x27;m calling you a little bit out of the blue here so i&#x27;ll tell you the purpose of the call in thirty seconds then you can decide if you wanna continue is that cool no thank you though</div>
+      </div>
+    </div>
+    <div class="card" data-contact="michael white" data-company="cuadvantage.com" data-transcript="hello hello hi nicole it&#x27;s lina from netsuite i know i&#x27;m calling a little bit out of the blue here so i&#x27;ll just tell you the purpose of the call in thirty seconds then you can decide if you wanna continue is that cool who are you with netsuite it&#x27;s spelled like so n e t s w i c k netsuite spell that again n e t s w i c k you did you say netflix netswik no netsuite n e t s okay w r what what is it about alright so we&#x27;re able to find actually thousands of prospects who need branded merch for their upcoming trade shows using ai then what we most importantly do is that we handle the outreach and book qualified sales meetings directly on your team&#x27;s calendar and right now we&#x27;re working with top promo companies like swag dot com merch dot com and we&#x27;re helping our clients close fortune one hundred level so i just wanted to offer you a two week pilot does tomorrow sound good for a short demo no i&#x27;m gonna pass thank you bye alright" data-date="2026-03-23">
+      <div class="card-header" onclick="toggleCard(37)">
+        <div class="card-title">
+          <span class="name">Michael White</span>
+          <span class="badge">86s</span>
+        </div>
+        <div class="card-subtitle">President &middot; cuadvantage.com</div>
+        <div class="card-meta">
+          <span>+19897802110</span>
+          <span>2026-03-23</span>
+        </div>
+      </div>
+      <div class="card-body" id="card-37">
+        <div class="transcript">hello hello hi nicole it&#x27;s lina from netsuite i know i&#x27;m calling a little bit out of the blue here so i&#x27;ll just tell you the purpose of the call in thirty seconds then you can decide if you wanna continue is that cool who are you with netsuite it&#x27;s spelled like so n e t s w i c k netsuite spell that again n e t s w i c k you did you say netflix netswik no netsuite n e t s okay w r what what is it about alright so we&#x27;re able to find actually thousands of prospects who need branded merch for their upcoming trade shows using ai then what we most importantly do is that we handle the outreach and book qualified sales meetings directly on your team&#x27;s calendar and right now we&#x27;re working with top promo companies like swag dot com merch dot com and we&#x27;re helping our clients close fortune one hundred level so i just wanted to offer you a two week pilot does tomorrow sound good for a short demo no i&#x27;m gonna pass thank you bye alright</div>
+      </div>
+    </div>
+    <div class="card" data-contact="mike pryer" data-company="candbmarketing.com" data-transcript="hello hey mike it&#x27;s tina from netsuite i know i&#x27;m calling out of the blue here so i&#x27;ll just tell you why in thirty seconds hello and you can decide if you wanna continue cool so sorry i&#x27;m not i didn&#x27;t hear you i&#x27;m sorry i can&#x27;t hear you mike it&#x27;s waking up can you hear me i can hear you okay now alright that&#x27;s perfect i hear you better as well so i&#x27;m saying that this is lina from netsuite and i know i&#x27;m calling out of the blue so i&#x27;ll just tell you why in thirty seconds then you can decide if you wanna continue cool what&#x27;s the order number about yeah so we can find thousands of can find thousands of prospects who need branded merch for their upcoming trade shows using ai then we handle the outreach and book qualified sales meetings directly on your team&#x27;s calendar and right now we&#x27;re working with leaders like swag dot com merch dot com and helping our clients close fortune one hundred level so just wanted to offer you a two week pilot is tomorrow good for a short demo well we sell my company sells promotional products okay i see and how is how&#x27;s the process like i mean some clients like merch dot com already have like outbound vendors is it what is this what you have but what happens is that they typically come well i mean i mean somebody calls and says i need some coffee mugs we show them some coffee mug samples and then they say okay i want twelve dozen and we order them and we sell them pretty simple okay interesting so for us we especially like exclusively specialize in branded merch so for example in our outreach we send like ai generated promo mock ups to grab like your prospects&#x27; attention so would a quick ten ten minute demo be worth your time no i don&#x27;t think so we do that ourselves so i wouldn&#x27;t wanna pay somebody else to do it for me and how&#x27;s that going for you i mean yeah i totally under right it&#x27;s going it&#x27;s all yeah it&#x27;s going okay i mean we&#x27;ve been doing it like that since i don&#x27;t know several years and what sounds good and what do you think could be improved about that just more customers probably sounds great i understand and would you say like when you say more customers is it like more quality or more volume no no you&#x27;re right more volume okay sounds good so i think that if you would be open to a demo tomorrow then we can discuss how we can do that if you would be open to that obviously open to show and then if you like to ask me yeah yeah okay you you show me how to get more customers definitely we can discuss everything that you you wanna know about and then you can see if if that&#x27;s a good fit and the roi is there and every everything looks good to you then you can keep going but if not at least you can have an idea about what we&#x27;re doing with our other clients okay i&#x27;ll i&#x27;ll i&#x27;ll look at it okay so is tomorrow good for a short demo or maybe monday tomorrow&#x27;s okay tomorrow is okay so what&#x27;s a good time tomorrow just to double check it&#x27;s central central time right right great okay so you&#x27;re gonna show me how so what let me see i understand you&#x27;re going to show me how to sell more promotional products is that correct so you&#x27;re gonna you&#x27;re gonna have our the demo with our adviser so you&#x27;re gonna tell him exactly what are your concerns and what you would like to improve and then you&#x27;re gonna discuss that with him and then if the roi is there and everything looks good to you then you can you can proceed but i do have a like three quick fire questions just to make the call more relevant to you are you ready like super quick well yeah go ahead great so i just wanna know exactly what you&#x27;re doing for the lead generation right now we are doing we&#x27;re doing what do you mean what do you mean how am i getting customers yeah exactly that&#x27;s what i mean okay mostly it&#x27;s the referrals word-of-mouth yeah okay i see that and as you mentioned you would like more volume of leads so you would like more customers sure my second yeah great okay so what do you think could be improved about the actual process other than the volume of the leads is there anything else i don&#x27;t know if i had more customers i think that would be a good thing okay that&#x27;s great that&#x27;s good to know and the last question would be is that our programs like they typically start at around three k to five k a month so assuming the roi is there and everything looks good is that budget friendly for you mike what are you talking about three thousand three three k to five k a month three thousand is that three thousand to five thousand yeah oh no yeah no no i wouldn&#x27;t even consider that wouldn&#x27;t even wouldn&#x27;t even consider that so the pro okay that&#x27;s that&#x27;s interesting so if we if we&#x27;re talking like you&#x27;re gonna have if everything looks good to you and you have the promo so it&#x27;s gonna be at like half price so it&#x27;s three to five k per month but when we offer you the two week pilot it&#x27;s gonna be half cost so you can evaluate like results free results risk free no no no i don&#x27;t and then no i&#x27;m not gonna pay that so sorry okay no problem" data-date="2026-03-26">
+      <div class="card-header" onclick="toggleCard(38)">
+        <div class="card-title">
+          <span class="name">Mike Pryer</span>
+          <span class="badge">461s</span>
+        </div>
+        <div class="card-subtitle">President &middot; candbmarketing.com</div>
+        <div class="card-meta">
+          <span>+18066794882</span>
+          <span>2026-03-26</span>
+        </div>
+      </div>
+      <div class="card-body" id="card-38">
+        <div class="transcript">hello hey mike it&#x27;s tina from netsuite i know i&#x27;m calling out of the blue here so i&#x27;ll just tell you why in thirty seconds hello and you can decide if you wanna continue cool so sorry i&#x27;m not i didn&#x27;t hear you i&#x27;m sorry i can&#x27;t hear you mike it&#x27;s waking up can you hear me i can hear you okay now alright that&#x27;s perfect i hear you better as well so i&#x27;m saying that this is lina from netsuite and i know i&#x27;m calling out of the blue so i&#x27;ll just tell you why in thirty seconds then you can decide if you wanna continue cool what&#x27;s the order number about yeah so we can find thousands of can find thousands of prospects who need branded merch for their upcoming trade shows using ai then we handle the outreach and book qualified sales meetings directly on your team&#x27;s calendar and right now we&#x27;re working with leaders like swag dot com merch dot com and helping our clients close fortune one hundred level so just wanted to offer you a two week pilot is tomorrow good for a short demo well we sell my company sells promotional products okay i see and how is how&#x27;s the process like i mean some clients like merch dot com already have like outbound vendors is it what is this what you have but what happens is that they typically come well i mean i mean somebody calls and says i need some coffee mugs we show them some coffee mug samples and then they say okay i want twelve dozen and we order them and we sell them pretty simple okay interesting so for us we especially like exclusively specialize in branded merch so for example in our outreach we send like ai generated promo mock ups to grab like your prospects&#x27; attention so would a quick ten ten minute demo be worth your time no i don&#x27;t think so we do that ourselves so i wouldn&#x27;t wanna pay somebody else to do it for me and how&#x27;s that going for you i mean yeah i totally under right it&#x27;s going it&#x27;s all yeah it&#x27;s going okay i mean we&#x27;ve been doing it like that since i don&#x27;t know several years and what sounds good and what do you think could be improved about that just more customers probably sounds great i understand and would you say like when you say more customers is it like more quality or more volume no no you&#x27;re right more volume okay sounds good so i think that if you would be open to a demo tomorrow then we can discuss how we can do that if you would be open to that obviously open to show and then if you like to ask me yeah yeah okay you you show me how to get more customers definitely we can discuss everything that you you wanna know about and then you can see if if that&#x27;s a good fit and the roi is there and every everything looks good to you then you can keep going but if not at least you can have an idea about what we&#x27;re doing with our other clients okay i&#x27;ll i&#x27;ll i&#x27;ll look at it okay so is tomorrow good for a short demo or maybe monday tomorrow&#x27;s okay tomorrow is okay so what&#x27;s a good time tomorrow just to double check it&#x27;s central central time right right great okay so you&#x27;re gonna show me how so what let me see i understand you&#x27;re going to show me how to sell more promotional products is that correct so you&#x27;re gonna you&#x27;re gonna have our the demo with our adviser so you&#x27;re gonna tell him exactly what are your concerns and what you would like to improve and then you&#x27;re gonna discuss that with him and then if the roi is there and everything looks good to you then you can you can proceed but i do have a like three quick fire questions just to make the call more relevant to you are you ready like super quick well yeah go ahead great so i just wanna know exactly what you&#x27;re doing for the lead generation right now we are doing we&#x27;re doing what do you mean what do you mean how am i getting customers yeah exactly that&#x27;s what i mean okay mostly it&#x27;s the referrals word-of-mouth yeah okay i see that and as you mentioned you would like more volume of leads so you would like more customers sure my second yeah great okay so what do you think could be improved about the actual process other than the volume of the leads is there anything else i don&#x27;t know if i had more customers i think that would be a good thing okay that&#x27;s great that&#x27;s good to know and the last question would be is that our programs like they typically start at around three k to five k a month so assuming the roi is there and everything looks good is that budget friendly for you mike what are you talking about three thousand three three k to five k a month three thousand is that three thousand to five thousand yeah oh no yeah no no i wouldn&#x27;t even consider that wouldn&#x27;t even wouldn&#x27;t even consider that so the pro okay that&#x27;s that&#x27;s interesting so if we if we&#x27;re talking like you&#x27;re gonna have if everything looks good to you and you have the promo so it&#x27;s gonna be at like half price so it&#x27;s three to five k per month but when we offer you the two week pilot it&#x27;s gonna be half cost so you can evaluate like results free results risk free no no no i don&#x27;t and then no i&#x27;m not gonna pay that so sorry okay no problem</div>
+      </div>
+    </div>
+    <div class="card" data-contact="mike rice" data-company="colorprint.com" data-transcript="hey mike it&#x27;s lina from netsuite i know i&#x27;m calling a little bit out of the blue here so i&#x27;ll just tell you why in thirty seconds then you can decide if you wanna continue is that cool i&#x27;m sorry who are you it&#x27;s lina from netsuite metzwick netsuite yes you got it right what do you do so we can find thousands of prospects who need branded merch for their upcoming trade shows using ai then we handle the outreach and book qualified sales meetings directly on your team&#x27;s calendar and right now we&#x27;re working with top promo companies like swag dot com merch dot com and helping our clients close fortune one hundred level so i just wanted to offer you a two week pilot so is tomorrow good for a short demo thank you i&#x27;m not in the market alright" data-date="2026-03-25">
+      <div class="card-header" onclick="toggleCard(39)">
+        <div class="card-title">
+          <span class="name">Mike Rice</span>
+          <span class="badge">59s</span>
+        </div>
+        <div class="card-subtitle">Correct Title &middot; colorprint.com</div>
+        <div class="card-meta">
+          <span>+14156085492</span>
+          <span>2026-03-25</span>
+        </div>
+      </div>
+      <div class="card-body" id="card-39">
+        <div class="transcript">hey mike it&#x27;s lina from netsuite i know i&#x27;m calling a little bit out of the blue here so i&#x27;ll just tell you why in thirty seconds then you can decide if you wanna continue is that cool i&#x27;m sorry who are you it&#x27;s lina from netsuite metzwick netsuite yes you got it right what do you do so we can find thousands of prospects who need branded merch for their upcoming trade shows using ai then we handle the outreach and book qualified sales meetings directly on your team&#x27;s calendar and right now we&#x27;re working with top promo companies like swag dot com merch dot com and helping our clients close fortune one hundred level so i just wanted to offer you a two week pilot so is tomorrow good for a short demo thank you i&#x27;m not in the market alright</div>
+      </div>
+    </div>
+    <div class="card" data-contact="mike williams" data-company="thehandhgroup.com" data-transcript="hello mike yes hey it&#x27;s lina from netsuite i know i&#x27;m calling out of the blue here so i&#x27;ll just tell you why in thirty seconds then you can decide if you wanna continue cool are you real yeah real okay okay so so what yeah was what was the name of your business again netsuite the company is called netsuite not netflix and not nesquik so we do something else completely and it&#x27;s spelled like so n e t s w i c k nesquik okay you got thirty seconds go and yeah so we can find thousands of prospects who need branded merch for their upcoming trade shows using ai then we handle the outreach and book qualified sales meetings directly on your team&#x27;s calendar and right now we&#x27;re working with leaders like swag dot com merch dot com and helping our clients close fortune one hundred level so just wanted to offer you a two week pilot is tomorrow good for a short demo nope nope actually i am not interested at all but i appreciate your sales effort i know how hard calling strangers is you&#x27;re doing a great job but i am a hard no alright thank you mike i appreciate it you too bye bye you have a good day bye" data-date="2026-03-27">
+      <div class="card-header" onclick="toggleCard(40)">
+        <div class="card-title">
+          <span class="name">Mike Williams</span>
+          <span class="badge">96s</span>
+        </div>
+        <div class="card-subtitle">Correct Title &middot; thehandhgroup.com</div>
+        <div class="card-meta">
+          <span>+17176760788</span>
+          <span>2026-03-27</span>
+        </div>
+      </div>
+      <div class="card-body" id="card-40">
+        <div class="transcript">hello mike yes hey it&#x27;s lina from netsuite i know i&#x27;m calling out of the blue here so i&#x27;ll just tell you why in thirty seconds then you can decide if you wanna continue cool are you real yeah real okay okay so so what yeah was what was the name of your business again netsuite the company is called netsuite not netflix and not nesquik so we do something else completely and it&#x27;s spelled like so n e t s w i c k nesquik okay you got thirty seconds go and yeah so we can find thousands of prospects who need branded merch for their upcoming trade shows using ai then we handle the outreach and book qualified sales meetings directly on your team&#x27;s calendar and right now we&#x27;re working with leaders like swag dot com merch dot com and helping our clients close fortune one hundred level so just wanted to offer you a two week pilot is tomorrow good for a short demo nope nope actually i am not interested at all but i appreciate your sales effort i know how hard calling strangers is you&#x27;re doing a great job but i am a hard no alright thank you mike i appreciate it you too bye bye you have a good day bye</div>
+      </div>
+    </div>
+    <div class="card" data-contact="nathan anderson" data-company="fmexpressions.com" data-transcript="hi it&#x27;s david hello hey nathan hello yes it&#x27;s lina from netsuite i know i&#x27;m calling you a little bit out of the blue here so i&#x27;ll just tell you why in thirty seconds then you can decide if you wanna continue is that cool for netsuite no netswik it&#x27;s spelled like so n e t s w i c k nextwick okay okay what what what do you do alright so we&#x27;re able to need branded using ai the next thing we do is that we handle the outreach and book qualified sales meetings directly on your team&#x27;s calendar so have to take care of qualified leads and right now we&#x27;re working with those fortune one so i just wanted to offer you a two week pilot does tomorrow sound good for a short demo yeah appreciate you reaching out we&#x27;re we&#x27;re we&#x27;re probably not interested thank you can you hear me nathan yeah you&#x27;re breaking up i&#x27;m driving got bad cell phone alright" data-date="2026-03-24">
+      <div class="card-header" onclick="toggleCard(41)">
+        <div class="card-title">
+          <span class="name">Nathan Anderson</span>
+          <span class="badge">80s</span>
+        </div>
+        <div class="card-subtitle">CEO &middot; fmexpressions.com</div>
+        <div class="card-meta">
+          <span>+12015627968</span>
+          <span>2026-03-24</span>
+        </div>
+      </div>
+      <div class="card-body" id="card-41">
+        <div class="transcript">hi it&#x27;s david hello hey nathan hello yes it&#x27;s lina from netsuite i know i&#x27;m calling you a little bit out of the blue here so i&#x27;ll just tell you why in thirty seconds then you can decide if you wanna continue is that cool for netsuite no netswik it&#x27;s spelled like so n e t s w i c k nextwick okay okay what what what do you do alright so we&#x27;re able to need branded using ai the next thing we do is that we handle the outreach and book qualified sales meetings directly on your team&#x27;s calendar so have to take care of qualified leads and right now we&#x27;re working with those fortune one so i just wanted to offer you a two week pilot does tomorrow sound good for a short demo yeah appreciate you reaching out we&#x27;re we&#x27;re we&#x27;re probably not interested thank you can you hear me nathan yeah you&#x27;re breaking up i&#x27;m driving got bad cell phone alright</div>
+      </div>
+    </div>
+    <div class="card" data-contact="nick oshiro" data-company="directedgemedia.com" data-transcript="hello hello hello hey it&#x27;s lina from netsuite i know i&#x27;m calling a little bit out of the blue here so i&#x27;ll just tell you why in thirty seconds then i can decide if you wanna continue is that i&#x27;m sorry who are you lena from netsuite from where netsuite spelled like so n e t s w i c k what do you want what what can i do for you said alright so we keep it short and quick so we&#x27;re able to find thousands of prospects who need branded merch for their upcoming trade shows using ai and oh go to hell" data-date="2026-03-24">
+      <div class="card-header" onclick="toggleCard(42)">
+        <div class="card-title">
+          <span class="name">Nick Oshiro</span>
+          <span class="badge">43s</span>
+        </div>
+        <div class="card-subtitle">Vice President Operations &middot; directedgemedia.com</div>
+        <div class="card-meta">
+          <span>+18472269743</span>
+          <span>2026-03-24</span>
+        </div>
+      </div>
+      <div class="card-body" id="card-42">
+        <div class="transcript">hello hello hello hey it&#x27;s lina from netsuite i know i&#x27;m calling a little bit out of the blue here so i&#x27;ll just tell you why in thirty seconds then i can decide if you wanna continue is that i&#x27;m sorry who are you lena from netsuite from where netsuite spelled like so n e t s w i c k what do you want what what can i do for you said alright so we keep it short and quick so we&#x27;re able to find thousands of prospects who need branded merch for their upcoming trade shows using ai and oh go to hell</div>
+      </div>
+    </div>
+    <div class="card" data-contact="oleg novofastovsky" data-company="thebranditagency.com" data-transcript="hello yes alright hey it&#x27;s lina from netswik i just wanna make sure you&#x27;re hearing me properly i hope the call is not breaking up it&#x27;s leah from netsuite who&#x27;s this netsuite is spelled like so n e t s w i c k netsuite and i know that i&#x27;m calling you a little bit out of the blue here so i&#x27;ll just tell you why in thirty seconds then you can decide if you wanna continue is that cool with you sure great so here&#x27;s the thing so we&#x27;re able to find thousands of prospects who need branded merch for their upcoming trade shows using ai the next thing we do is we handle the outreach and book qualified sales meetings directly on your team&#x27;s calendar so they just have to take care of qualified leads and right now we&#x27;re working with top from companies like swag dot com merch dot com and we&#x27;re helping our clients close fortune one hundred level so i just wanted to offer you a two week pilot does tomorrow sound good for a short demo i mean everything sounds great the only thing is i&#x27;m not in a merch business alright you have a great day and so" data-date="2026-03-24">
+      <div class="card-header" onclick="toggleCard(43)">
+        <div class="card-title">
+          <span class="name">Oleg Novofastovsky</span>
+          <span class="badge">79s</span>
+        </div>
+        <div class="card-subtitle">Regional Vice President of Sales &middot; thebranditagency.com</div>
+        <div class="card-meta">
+          <span>+16467074004</span>
+          <span>2026-03-24</span>
+        </div>
+      </div>
+      <div class="card-body" id="card-43">
+        <div class="transcript">hello yes alright hey it&#x27;s lina from netswik i just wanna make sure you&#x27;re hearing me properly i hope the call is not breaking up it&#x27;s leah from netsuite who&#x27;s this netsuite is spelled like so n e t s w i c k netsuite and i know that i&#x27;m calling you a little bit out of the blue here so i&#x27;ll just tell you why in thirty seconds then you can decide if you wanna continue is that cool with you sure great so here&#x27;s the thing so we&#x27;re able to find thousands of prospects who need branded merch for their upcoming trade shows using ai the next thing we do is we handle the outreach and book qualified sales meetings directly on your team&#x27;s calendar so they just have to take care of qualified leads and right now we&#x27;re working with top from companies like swag dot com merch dot com and we&#x27;re helping our clients close fortune one hundred level so i just wanted to offer you a two week pilot does tomorrow sound good for a short demo i mean everything sounds great the only thing is i&#x27;m not in a merch business alright you have a great day and so</div>
+      </div>
+    </div>
+    <div class="card" data-contact="paul doucette" data-company="printhouse.com" data-transcript="hello hi paul it&#x27;s selena from netsuite i know i&#x27;m calling a little bit out of the blue here so i&#x27;ll just show you the purpose of the call in thirty seconds then you can decide if you wanna continue does that sound fair i don&#x27;t even i i i couldn&#x27;t even understand what you just said is it breaking up yes alright can you hear me better now i&#x27;ll try to speak slower so i was saying that this is lina from next week oh hello are you there yeah can you hear me i i can barely hear you i mean it&#x27;s just everything&#x27;s it&#x27;s all breaking up yeah i see i see it&#x27;s not even getting better right what what is it that you&#x27;re calling about i&#x27;m trying to understand i can&#x27;t i can&#x27;t make out what you&#x27;re saying okay so just tell me if you can hear me okay i&#x27;ll try to break it up into you know anyway so we&#x27;re able to find thousands of prospects who need branded merch for their upcoming trade shows using ai oh i don&#x27;t i don&#x27;t handle that then here is the i don&#x27;t handle that function at my at my workplace alright okay have a good day thank you" data-date="2026-03-23">
+      <div class="card-header" onclick="toggleCard(44)">
+        <div class="card-title">
+          <span class="name">Paul Doucette</span>
+          <span class="badge">88s</span>
+        </div>
+        <div class="card-subtitle">Chief Executive Officer &middot; printhouse.com</div>
+        <div class="card-meta">
+          <span>+15082075756</span>
+          <span>2026-03-23</span>
+        </div>
+      </div>
+      <div class="card-body" id="card-44">
+        <div class="transcript">hello hi paul it&#x27;s selena from netsuite i know i&#x27;m calling a little bit out of the blue here so i&#x27;ll just show you the purpose of the call in thirty seconds then you can decide if you wanna continue does that sound fair i don&#x27;t even i i i couldn&#x27;t even understand what you just said is it breaking up yes alright can you hear me better now i&#x27;ll try to speak slower so i was saying that this is lina from next week oh hello are you there yeah can you hear me i i can barely hear you i mean it&#x27;s just everything&#x27;s it&#x27;s all breaking up yeah i see i see it&#x27;s not even getting better right what what is it that you&#x27;re calling about i&#x27;m trying to understand i can&#x27;t i can&#x27;t make out what you&#x27;re saying okay so just tell me if you can hear me okay i&#x27;ll try to break it up into you know anyway so we&#x27;re able to find thousands of prospects who need branded merch for their upcoming trade shows using ai oh i don&#x27;t i don&#x27;t handle that then here is the i don&#x27;t handle that function at my at my workplace alright okay have a good day thank you</div>
+      </div>
+    </div>
+    <div class="card" data-contact="peter grossgold" data-company="goldcrownpromos.com" data-transcript="afternoon goldstein good afternoon hey peter it&#x27;s yes lina from netsuite i know i&#x27;m calling out of the blue here so let&#x27;s tell you why in thirty seconds then you can decide if you wanna continue cool and i apologize who&#x27;d you say you&#x27;re with it&#x27;s lina from netsuite let me spell it out for you so it&#x27;s n e t s w i c k netsuite never heard of it sorry go ahead okay so thank you so we can find thousands of prospects who need branded merch for their upcoming trade shows using ai then we handle the outreach and book qualified sales meetings directly on your team&#x27;s calendar right now we&#x27;re working with leaders like swag dot com merch dot com and helping our clients close fortune one hundred level so just wanted to offer you a two week pilot so is monday good for a short demo no thank you we&#x27;re all good i appreciate the time though thank you peter is it because you&#x27;re already doing this in house or have you tried anything else before and it did not work no we don&#x27;t really wanna do that unfortunately we&#x27;re not at that level where we wanna where we wanna scale it that much alright i totally understand okay thank you thank you bye bye bye bye thank you peter you have a good day bye" data-date="2026-03-27">
+      <div class="card-header" onclick="toggleCard(45)">
+        <div class="card-title">
+          <span class="name">Peter Grossgold</span>
+          <span class="badge">87s</span>
+        </div>
+        <div class="card-subtitle">Correct Title &middot; goldcrownpromos.com</div>
+        <div class="card-meta">
+          <span>+16028105555</span>
+          <span>2026-03-27</span>
+        </div>
+      </div>
+      <div class="card-body" id="card-45">
+        <div class="transcript">afternoon goldstein good afternoon hey peter it&#x27;s yes lina from netsuite i know i&#x27;m calling out of the blue here so let&#x27;s tell you why in thirty seconds then you can decide if you wanna continue cool and i apologize who&#x27;d you say you&#x27;re with it&#x27;s lina from netsuite let me spell it out for you so it&#x27;s n e t s w i c k netsuite never heard of it sorry go ahead okay so thank you so we can find thousands of prospects who need branded merch for their upcoming trade shows using ai then we handle the outreach and book qualified sales meetings directly on your team&#x27;s calendar right now we&#x27;re working with leaders like swag dot com merch dot com and helping our clients close fortune one hundred level so just wanted to offer you a two week pilot so is monday good for a short demo no thank you we&#x27;re all good i appreciate the time though thank you peter is it because you&#x27;re already doing this in house or have you tried anything else before and it did not work no we don&#x27;t really wanna do that unfortunately we&#x27;re not at that level where we wanna where we wanna scale it that much alright i totally understand okay thank you thank you bye bye bye bye thank you peter you have a good day bye</div>
+      </div>
+    </div>
+    <div class="card" data-contact="pierre martichoux" data-company="chameleonlike.com" data-transcript="hello hey pierre it&#x27;s lina from netsuite i know i&#x27;m calling out of the blue here so i&#x27;ll just tell you why in thirty seconds then you can decide if you wanna continue cool okay okay great so we can find thousands of prospects who need branded merch for their upcoming trade shows using ai then we handle the outreach and book qualified sales meetings directly on your team&#x27;s calendar and right now we&#x27;re working with leaders like swag dot com merge dot com and helping our clients close fortune one hundred level so just wanted to offer you a two week pilot is tomorrow good for a short demo i&#x27;m good thank you very much for the call good call but i&#x27;m i&#x27;m all set thank you thank you i mean" data-date="2026-03-26">
+      <div class="card-header" onclick="toggleCard(46)">
+        <div class="card-title">
+          <span class="name">Pierre Martichoux</span>
+          <span class="badge">54s</span>
+        </div>
+        <div class="card-subtitle">President &middot; chameleonlike.com</div>
+        <div class="card-meta">
+          <span>+14085046665</span>
+          <span>2026-03-26</span>
+        </div>
+      </div>
+      <div class="card-body" id="card-46">
+        <div class="transcript">hello hey pierre it&#x27;s lina from netsuite i know i&#x27;m calling out of the blue here so i&#x27;ll just tell you why in thirty seconds then you can decide if you wanna continue cool okay okay great so we can find thousands of prospects who need branded merch for their upcoming trade shows using ai then we handle the outreach and book qualified sales meetings directly on your team&#x27;s calendar and right now we&#x27;re working with leaders like swag dot com merge dot com and helping our clients close fortune one hundred level so just wanted to offer you a two week pilot is tomorrow good for a short demo i&#x27;m good thank you very much for the call good call but i&#x27;m i&#x27;m all set thank you thank you i mean</div>
+      </div>
+    </div>
+    <div class="card" data-contact="rebecca lebold" data-company="poppromos.com" data-transcript="hello hello hey rebecca it&#x27;s lina from netsuite i know i&#x27;m calling a little bit out of the blue here so i&#x27;ll just tell you why in thirty seconds then you can decide if you wanna continue is that cool yeah yeah alright so here&#x27;s the thing rebecca so we&#x27;re able to find thousands of prospects who need branded merch for their upcoming trade shows using ai then next thing we do is that we completely handle the outreach and book qualified sales meetings directly on your team&#x27;s calendar so they just have to take care of qualified leads and right now we&#x27;re working with top proto companies like swag dot com merch dot com and we&#x27;re helping our clients close fortune one hundred level so i just wanted to offer you a two week pilot does tomorrow sound good for a short demo i&#x27;m not in charge of sales i&#x27;m not interested have a good day bye bye" data-date="2026-03-23">
+      <div class="card-header" onclick="toggleCard(47)">
+        <div class="card-title">
+          <span class="name">Rebecca Lebold</span>
+          <span class="badge">55s</span>
+        </div>
+        <div class="card-subtitle">Chief Operating Officer &middot; poppromos.com</div>
+        <div class="card-meta">
+          <span>+12012890204</span>
+          <span>2026-03-23</span>
+        </div>
+      </div>
+      <div class="card-body" id="card-47">
+        <div class="transcript">hello hello hey rebecca it&#x27;s lina from netsuite i know i&#x27;m calling a little bit out of the blue here so i&#x27;ll just tell you why in thirty seconds then you can decide if you wanna continue is that cool yeah yeah alright so here&#x27;s the thing rebecca so we&#x27;re able to find thousands of prospects who need branded merch for their upcoming trade shows using ai then next thing we do is that we completely handle the outreach and book qualified sales meetings directly on your team&#x27;s calendar so they just have to take care of qualified leads and right now we&#x27;re working with top proto companies like swag dot com merch dot com and we&#x27;re helping our clients close fortune one hundred level so i just wanted to offer you a two week pilot does tomorrow sound good for a short demo i&#x27;m not in charge of sales i&#x27;m not interested have a good day bye bye</div>
+      </div>
+    </div>
+    <div class="card" data-contact="rich schwanke" data-company="ggoutfitters.com" data-transcript="hello hey rich it&#x27;s lina from netsuite i know i&#x27;m calling a little bit out of the blue here so i&#x27;ll just tell you why in thirty seconds then you can decide if you wanna continue is that cool who are you calling from netsuite i&#x27;m i&#x27;m sorry i felt like you&#x27;re broke breaking up what was the name of the company netsuite it&#x27;s spelled like so n e t s w i c k okay and what&#x27;s the purpose of the call alright so we can find thousands of prospects who need branded merch for their upcoming trade shows using ai then we handle the outreach and book qualified sales meetings directly on your team&#x27;s calendar and right now we&#x27;re working with top promo companies like swai dot com merch dot com and we&#x27;re helping our clients close fortune one hundred level so i just wanted to offer you a two week pilot does tomorrow sound good for a short demo well i appreciate you reaching out but i don&#x27;t think right now is a good time but thank you for your call alright have a good day" data-date="2026-03-24">
+      <div class="card-header" onclick="toggleCard(48)">
+        <div class="card-title">
+          <span class="name">Rich Schwanke</span>
+          <span class="badge">77s</span>
+        </div>
+        <div class="card-subtitle">Vice President, Brands &middot; ggoutfitters.com</div>
+        <div class="card-meta">
+          <span>+15083260751</span>
+          <span>2026-03-24</span>
+        </div>
+      </div>
+      <div class="card-body" id="card-48">
+        <div class="transcript">hello hey rich it&#x27;s lina from netsuite i know i&#x27;m calling a little bit out of the blue here so i&#x27;ll just tell you why in thirty seconds then you can decide if you wanna continue is that cool who are you calling from netsuite i&#x27;m i&#x27;m sorry i felt like you&#x27;re broke breaking up what was the name of the company netsuite it&#x27;s spelled like so n e t s w i c k okay and what&#x27;s the purpose of the call alright so we can find thousands of prospects who need branded merch for their upcoming trade shows using ai then we handle the outreach and book qualified sales meetings directly on your team&#x27;s calendar and right now we&#x27;re working with top promo companies like swai dot com merch dot com and we&#x27;re helping our clients close fortune one hundred level so i just wanted to offer you a two week pilot does tomorrow sound good for a short demo well i appreciate you reaching out but i don&#x27;t think right now is a good time but thank you for your call alright have a good day</div>
+      </div>
+    </div>
+    <div class="card" data-contact="sarah martin" data-company="creativegiftsource.com" data-transcript="this is sarah hey sarah it&#x27;s lina from nestlec i know i&#x27;m calling out as blue here so i&#x27;ll just tell you why in thirty seconds then you can decide if you wanna continue cool okay great so we can find thousands of prospects who need branded merch for their upcoming trade shows using ai then we handle the outreach and book qualified sales meetings directly on your team&#x27;s calendar and right now we&#x27;re working with leaders like swag dot com merge dot com and helping our clients close fortune one hundred level so just wanted to offer you a two week pilot is monday good for a short demo no i&#x27;m not interested thanks so much though is that because you&#x27;re already doing this in house or you have you tried anything before that did not work out for you yes nope don&#x27;t need it thanks so much gotta go bye bye okay bye" data-date="2026-03-27">
+      <div class="card-header" onclick="toggleCard(49)">
+        <div class="card-title">
+          <span class="name">Sarah Martin</span>
+          <span class="badge">55s</span>
+        </div>
+        <div class="card-subtitle">Correct Title &middot; creativegiftsource.com</div>
+        <div class="card-meta">
+          <span>+19492859499</span>
+          <span>2026-03-27</span>
+        </div>
+      </div>
+      <div class="card-body" id="card-49">
+        <div class="transcript">this is sarah hey sarah it&#x27;s lina from nestlec i know i&#x27;m calling out as blue here so i&#x27;ll just tell you why in thirty seconds then you can decide if you wanna continue cool okay great so we can find thousands of prospects who need branded merch for their upcoming trade shows using ai then we handle the outreach and book qualified sales meetings directly on your team&#x27;s calendar and right now we&#x27;re working with leaders like swag dot com merge dot com and helping our clients close fortune one hundred level so just wanted to offer you a two week pilot is monday good for a short demo no i&#x27;m not interested thanks so much though is that because you&#x27;re already doing this in house or you have you tried anything before that did not work out for you yes nope don&#x27;t need it thanks so much gotta go bye bye okay bye</div>
+      </div>
+    </div>
+    <div class="card" data-contact="scott denny" data-company="garyline.com" data-transcript="hello hello hey scott it&#x27;s lina from nextweek i know i&#x27;m calling a little bit out of the blue here so i&#x27;ll just show you why in thirty seconds then you can decide if you wanna continue is that cool okay right so we can find thousands of prospects who need branded merch for their upcoming trade shows using ai then we handle the outreach and book qualified sales meetings directly on your team&#x27;s calendar and right now we&#x27;re working with top promo companies like swag dot com merch dot com and we&#x27;re helping our clients close fortune one hundred level so i just wanted to offer you a two week pilot does the motor sound good for a short demo i&#x27;m not gonna be interested thanks okay" data-date="2026-03-24">
+      <div class="card-header" onclick="toggleCard(50)">
+        <div class="card-title">
+          <span class="name">Scott Denny</span>
+          <span class="badge">49s</span>
+        </div>
+        <div class="card-subtitle">Vice President &middot; garyline.com</div>
+        <div class="card-meta">
+          <span>+12019815690</span>
+          <span>2026-03-24</span>
+        </div>
+      </div>
+      <div class="card-body" id="card-50">
+        <div class="transcript">hello hello hey scott it&#x27;s lina from nextweek i know i&#x27;m calling a little bit out of the blue here so i&#x27;ll just show you why in thirty seconds then you can decide if you wanna continue is that cool okay right so we can find thousands of prospects who need branded merch for their upcoming trade shows using ai then we handle the outreach and book qualified sales meetings directly on your team&#x27;s calendar and right now we&#x27;re working with top promo companies like swag dot com merch dot com and we&#x27;re helping our clients close fortune one hundred level so i just wanted to offer you a two week pilot does the motor sound good for a short demo i&#x27;m not gonna be interested thanks okay</div>
+      </div>
+    </div>
+    <div class="card" data-contact="sean mcmahon" data-company="breweryoutfitters.com" data-transcript="hello this is sean sean yep hey it&#x27;s lina from netsuite i know i&#x27;m calling you a little bit out of the blue here so i&#x27;ll just tell you why in thirty seconds then you can decide if you wanna continue is that cool sure great so we&#x27;re able to find thousands of prospects who need branded merch for their upcoming trade shows using ai then next thing we do is that we handle the outreach and book qualified sales meetings directly in your on your team&#x27;s calendar and right now we&#x27;re working with top promo companies like swag dot com merch dot com and we&#x27;re helping our clients close fortune one hundred level so i just wanted to offer you a two week pilot does tomorrow sound good for a short demo no thanks mhmm" data-date="2026-03-23">
+      <div class="card-header" onclick="toggleCard(51)">
+        <div class="card-title">
+          <span class="name">Sean McMahon</span>
+          <span class="badge">55s</span>
+        </div>
+        <div class="card-subtitle">Owner / Founder &middot; breweryoutfitters.com</div>
+        <div class="card-meta">
+          <span>+15037037190</span>
+          <span>2026-03-23</span>
+        </div>
+      </div>
+      <div class="card-body" id="card-51">
+        <div class="transcript">hello this is sean sean yep hey it&#x27;s lina from netsuite i know i&#x27;m calling you a little bit out of the blue here so i&#x27;ll just tell you why in thirty seconds then you can decide if you wanna continue is that cool sure great so we&#x27;re able to find thousands of prospects who need branded merch for their upcoming trade shows using ai then next thing we do is that we handle the outreach and book qualified sales meetings directly in your on your team&#x27;s calendar and right now we&#x27;re working with top promo companies like swag dot com merch dot com and we&#x27;re helping our clients close fortune one hundred level so i just wanted to offer you a two week pilot does tomorrow sound good for a short demo no thanks mhmm</div>
+      </div>
+    </div>
+    <div class="card" data-contact="shannon torchia" data-company="brandaways.com" data-transcript="hello hey shannon it&#x27;s lina from netflix i know i&#x27;m calling a little bit out of the blue here so i&#x27;ll just tell you the purpose of the call in thirty seconds then you can decide if you wanna continue is that cool" data-date="2026-03-23">
+      <div class="card-header" onclick="toggleCard(52)">
+        <div class="card-title">
+          <span class="name">Shannon Torchia</span>
+          <span class="badge">18s</span>
+        </div>
+        <div class="card-subtitle">Owner &middot; brandaways.com</div>
+        <div class="card-meta">
+          <span>+16155078361</span>
+          <span>2026-03-23</span>
+        </div>
+      </div>
+      <div class="card-body" id="card-52">
+        <div class="transcript">hello hey shannon it&#x27;s lina from netflix i know i&#x27;m calling a little bit out of the blue here so i&#x27;ll just tell you the purpose of the call in thirty seconds then you can decide if you wanna continue is that cool</div>
+      </div>
+    </div>
+    <div class="card" data-contact="sharon mann" data-company="gepromos.com" data-transcript="hey sharon it&#x27;s lina from netswicke i know i&#x27;m calling a little bit out of the blue here" data-date="2026-03-23">
+      <div class="card-header" onclick="toggleCard(53)">
+        <div class="card-title">
+          <span class="name">Sharon Mann</span>
+          <span class="badge">11s</span>
+        </div>
+        <div class="card-subtitle">Owner &middot; gepromos.com</div>
+        <div class="card-meta">
+          <span>+12485444000</span>
+          <span>2026-03-23</span>
+        </div>
+      </div>
+      <div class="card-body" id="card-53">
+        <div class="transcript">hey sharon it&#x27;s lina from netswicke i know i&#x27;m calling a little bit out of the blue here</div>
+      </div>
+    </div>
+    <div class="card" data-contact="stefanie snyder" data-company="sgpromo.com" data-transcript="hello hey stephanie it&#x27;s lina from netswik i know i&#x27;m calling out of the blue here so i&#x27;ll show you why in thirty seconds then you can decide if you wanna continue cool sorry where are you calling from netsuite it&#x27;s spelled like so n e t s w i c k okay and what is this regarding so what we do is that we can find thousands of prospects who need branded merch for their upcoming trade shows using ai then we handle the outreach and book qualified sales meetings directly on your team&#x27;s calendar and right now we&#x27;re working with leaders like swag dot com merch dot com and helping our clients close fortune one hundred level so just wanted to offer you a two week pilot is monday good for a short demo oh no we&#x27;re we&#x27;re all good thank you" data-date="2026-03-27">
+      <div class="card-header" onclick="toggleCard(54)">
+        <div class="card-title">
+          <span class="name">Stefanie Snyder</span>
+          <span class="badge">56s</span>
+        </div>
+        <div class="card-subtitle">Owner &middot; sgpromo.com</div>
+        <div class="card-meta">
+          <span>+18186212096</span>
+          <span>2026-03-27</span>
+        </div>
+      </div>
+      <div class="card-body" id="card-54">
+        <div class="transcript">hello hey stephanie it&#x27;s lina from netswik i know i&#x27;m calling out of the blue here so i&#x27;ll show you why in thirty seconds then you can decide if you wanna continue cool sorry where are you calling from netsuite it&#x27;s spelled like so n e t s w i c k okay and what is this regarding so what we do is that we can find thousands of prospects who need branded merch for their upcoming trade shows using ai then we handle the outreach and book qualified sales meetings directly on your team&#x27;s calendar and right now we&#x27;re working with leaders like swag dot com merch dot com and helping our clients close fortune one hundred level so just wanted to offer you a two week pilot is monday good for a short demo oh no we&#x27;re we&#x27;re all good thank you</div>
+      </div>
+    </div>
+    <div class="card" data-contact="steve friar" data-company="onfulfillment.com" data-transcript="this is steve on fulfillment steve yeah this is steve on fulfillment hey it&#x27;s lina from netsuite i know i&#x27;m calling a little bit out of the blue here so i&#x27;ll tell you why in thirty seconds then you can decide if you wanna continue is that cool yeah go ahead great so we can find thousands of prospects who need branded merch for their upcoming trade shows using ai then we handle the outreach and book qualified sales meetings directly on your team&#x27;s calendar and right now we&#x27;re working with top promo companies like swag dot com merch dot com and helping our clients close fortune one hundred level so i just wanted to offer you a two week pilot so is tomorrow good for a short demo no you know what we&#x27;re actually in good shape we get we have tons of leads and tons of opportunities right now so we&#x27;re good thank you" data-date="2026-03-25">
+      <div class="card-header" onclick="toggleCard(55)">
+        <div class="card-title">
+          <span class="name">Steve Friar</span>
+          <span class="badge">58s</span>
+        </div>
+        <div class="card-subtitle">Correct Title &middot; onfulfillment.com</div>
+        <div class="card-meta">
+          <span>+15107932549</span>
+          <span>2026-03-25</span>
+        </div>
+      </div>
+      <div class="card-body" id="card-55">
+        <div class="transcript">this is steve on fulfillment steve yeah this is steve on fulfillment hey it&#x27;s lina from netsuite i know i&#x27;m calling a little bit out of the blue here so i&#x27;ll tell you why in thirty seconds then you can decide if you wanna continue is that cool yeah go ahead great so we can find thousands of prospects who need branded merch for their upcoming trade shows using ai then we handle the outreach and book qualified sales meetings directly on your team&#x27;s calendar and right now we&#x27;re working with top promo companies like swag dot com merch dot com and helping our clients close fortune one hundred level so i just wanted to offer you a two week pilot so is tomorrow good for a short demo no you know what we&#x27;re actually in good shape we get we have tons of leads and tons of opportunities right now so we&#x27;re good thank you</div>
+      </div>
+    </div>
+    <div class="card" data-contact="steve wegert" data-company="sportsprint.com" data-transcript="may i help you hi steve it&#x27;s lina from netsuite i know i&#x27;m calling you a little bit out of blue here so i&#x27;ll just tell you why in thirty seconds then you can decide if you wanna continue is that cool sure great so here&#x27;s the thing so we&#x27;re able to find thousands of prospects who need branded merch for their upcoming trade shows using ai the next thing we do is that we handle the outreach and book qualified sales meetings no thanks direct" data-date="2026-03-24">
+      <div class="card-header" onclick="toggleCard(56)">
+        <div class="card-title">
+          <span class="name">Steve Wegert</span>
+          <span class="badge">35s</span>
+        </div>
+        <div class="card-subtitle">Owner and President &middot; sportsprint.com</div>
+        <div class="card-meta">
+          <span>+13146163740</span>
+          <span>2026-03-24</span>
+        </div>
+      </div>
+      <div class="card-body" id="card-56">
+        <div class="transcript">may i help you hi steve it&#x27;s lina from netsuite i know i&#x27;m calling you a little bit out of blue here so i&#x27;ll just tell you why in thirty seconds then you can decide if you wanna continue is that cool sure great so here&#x27;s the thing so we&#x27;re able to find thousands of prospects who need branded merch for their upcoming trade shows using ai the next thing we do is that we handle the outreach and book qualified sales meetings no thanks direct</div>
+      </div>
+    </div>
+    <div class="card" data-contact="taylor parker" data-company="brandmakers.com" data-transcript="hello hey taylor it&#x27;s lina from netswik i know i&#x27;m calling a little bit out of the blue here so i&#x27;ll show you why in thirty seconds then you can decide if you wanna continue is that cool sorry you&#x27;re calling from where next week what is that so we can find thousands of prospects who need branded merch for their upcoming trade shows using ai then we handle the outreach and book qualified sales meetings directly on your team&#x27;s calendar and right now we&#x27;re working with top promo companies like swag dot com merch dot com and we&#x27;re helping our clients close fortune one hundred level so i just wanted to offer you a two week pilot so is tomorrow good for a short demo nope not interested alright" data-date="2026-03-24">
+      <div class="card-header" onclick="toggleCard(57)">
+        <div class="card-title">
+          <span class="name">Taylor Parker</span>
+          <span class="badge">58s</span>
+        </div>
+        <div class="card-subtitle">National Account Sales Manager &middot; brandmakers.com</div>
+        <div class="card-meta">
+          <span>+18016025468</span>
+          <span>2026-03-24</span>
+        </div>
+      </div>
+      <div class="card-body" id="card-57">
+        <div class="transcript">hello hey taylor it&#x27;s lina from netswik i know i&#x27;m calling a little bit out of the blue here so i&#x27;ll show you why in thirty seconds then you can decide if you wanna continue is that cool sorry you&#x27;re calling from where next week what is that so we can find thousands of prospects who need branded merch for their upcoming trade shows using ai then we handle the outreach and book qualified sales meetings directly on your team&#x27;s calendar and right now we&#x27;re working with top promo companies like swag dot com merch dot com and we&#x27;re helping our clients close fortune one hundred level so i just wanted to offer you a two week pilot so is tomorrow good for a short demo nope not interested alright</div>
+      </div>
+    </div>
+    <div class="card" data-contact="violet brown unknown" data-company="strangemusicinc.net" data-transcript="hello hello so why are violet yes hey it&#x27;s lina from netsuite i know i&#x27;m calling out of the blue here so i&#x27;ll tell you why in thirty seconds then you can decide if you wanna continue cool okay okay great so we can find thousands of prospects who need branded merch for their upcoming trade shows using ai then we handle the outreach and book qualified sales meetings directly on your team&#x27;s calendar and right now we&#x27;re working with leaders like swag dot com merch dot com and helping our clients close fortune one hundred level so just wanted to offer you a two week pilot is monday good for a short demo and you&#x27;re talking about for merck yeah right we we own our own merch company so we&#x27;re good alright thank you bye no" data-date="2026-03-27">
+      <div class="card-header" onclick="toggleCard(58)">
+        <div class="card-title">
+          <span class="name">Violet Brown Unknown</span>
+          <span class="badge">58s</span>
+        </div>
+        <div class="card-subtitle">V.P. of Label Development &middot; strangemusicinc.net</div>
+        <div class="card-meta">
+          <span>+13104622750</span>
+          <span>2026-03-27</span>
+        </div>
+      </div>
+      <div class="card-body" id="card-58">
+        <div class="transcript">hello hello so why are violet yes hey it&#x27;s lina from netsuite i know i&#x27;m calling out of the blue here so i&#x27;ll tell you why in thirty seconds then you can decide if you wanna continue cool okay okay great so we can find thousands of prospects who need branded merch for their upcoming trade shows using ai then we handle the outreach and book qualified sales meetings directly on your team&#x27;s calendar and right now we&#x27;re working with leaders like swag dot com merch dot com and helping our clients close fortune one hundred level so just wanted to offer you a two week pilot is monday good for a short demo and you&#x27;re talking about for merck yeah right we we own our own merch company so we&#x27;re good alright thank you bye no</div>
+      </div>
+    </div>
+    <div class="card" data-contact="wayne morris" data-company="theprintingport.com" data-transcript="how can i help you hello hey wayne it&#x27;s lina from i know i&#x27;m calling out of the blue here so i&#x27;ll just tell you why in thirty seconds then you can decide if you wanna continue cool sure great okay so we can find thousands of prospects who need branded merch for their upcoming trade shows using ai then we handle the outreach and book qualified sales meetings directly on your team&#x27;s calendar and right now we&#x27;re working with leaders like swag dot com merch dot com and helping our clients close fortune one hundred level so just wanted to offer you a two week pilot is tomorrow good for a short demo no thank you we&#x27;re not interested in using anything ai generated alright i see okay you have a good day" data-date="2026-03-27">
+      <div class="card-header" onclick="toggleCard(59)">
+        <div class="card-title">
+          <span class="name">Wayne Morris</span>
+          <span class="badge">57s</span>
+        </div>
+        <div class="card-subtitle">Correct Title &middot; theprintingport.com</div>
+        <div class="card-meta">
+          <span>+18432492610</span>
+          <span>2026-03-27</span>
+        </div>
+      </div>
+      <div class="card-body" id="card-59">
+        <div class="transcript">how can i help you hello hey wayne it&#x27;s lina from i know i&#x27;m calling out of the blue here so i&#x27;ll just tell you why in thirty seconds then you can decide if you wanna continue cool sure great okay so we can find thousands of prospects who need branded merch for their upcoming trade shows using ai then we handle the outreach and book qualified sales meetings directly on your team&#x27;s calendar and right now we&#x27;re working with leaders like swag dot com merch dot com and helping our clients close fortune one hundred level so just wanted to offer you a two week pilot is tomorrow good for a short demo no thank you we&#x27;re not interested in using anything ai generated alright i see okay you have a good day</div>
+      </div>
+    </div>
+    <div class="card" data-contact="william mcgough jr." data-company="myprogressiveimage.com" data-transcript="hello hello hi william it&#x27;s lina from netsuite i know i&#x27;m calling you a little bit out of the blue here so i&#x27;ll just tell you why in thirty seconds then you can decide if you wanna continue is that cool okay great so here&#x27;s the thing william so we&#x27;re able to find thousands of prospects who need branded merch for their upcoming trade shows using ai the next thing we do is that we" data-date="2026-03-23">
+      <div class="card-header" onclick="toggleCard(60)">
+        <div class="card-title">
+          <span class="name">William McGough Jr.</span>
+          <span class="badge">31s</span>
+        </div>
+        <div class="card-subtitle">President &middot; myprogressiveimage.com</div>
+        <div class="card-meta">
+          <span>+13342241878</span>
+          <span>2026-03-23</span>
+        </div>
+      </div>
+      <div class="card-body" id="card-60">
+        <div class="transcript">hello hello hi william it&#x27;s lina from netsuite i know i&#x27;m calling you a little bit out of the blue here so i&#x27;ll just tell you why in thirty seconds then you can decide if you wanna continue is that cool okay great so here&#x27;s the thing william so we&#x27;re able to find thousands of prospects who need branded merch for their upcoming trade shows using ai the next thing we do is that we</div>
+      </div>
+    </div>
+    <div class="card" data-contact="bob katz" data-company="mygrandma.com" data-transcript="hello who bob is this hey it&#x27;s lina from netsuite i know i&#x27;m calling a little bit out of the blue here so i&#x27;ll tell you why in thirty seconds then you can decide if you wanna continue is that cool i don&#x27;t understand you&#x27;re you&#x27;re calling what it&#x27;s breaking up bob i couldn&#x27;t hear you what did you say what you&#x27;re calling me because of what okay so we can find thousands of prospects who need branded merch for their upcoming trade shows using ai then we handle the outreach and book qualified sales meetings directly on your team&#x27;s calendar and right now we&#x27;re working with top promo companies like swag dot com merch dot com and helping our clients close fortune one hundred level so i just wanted to offer you a two week pilot yeah yeah yeah we&#x27;re not we&#x27;re not we&#x27;re not that we&#x27;re we&#x27;re not that big and we don&#x27;t go to trade shows we&#x27;re going to the big e because we&#x27;re going to introduce in late april our mini cakes but we do that at the show ourselves so is tomorrow good for a short demo so we&#x27;re not that big of a company alright okay i don&#x27;t think that would work for us but thank you very much sure boss you have a good day bye okay thank you okay bye bye hopefully we will be someday bye bye" data-date="2026-03-25">
+      <div class="card-header" onclick="toggleCard(61)">
+        <div class="card-title">
+          <span class="name">bob katz</span>
+          <span class="badge">76s</span>
+        </div>
+        <div class="card-subtitle">Correct Title &middot; mygrandma.com</div>
+        <div class="card-meta">
+          <span>+16173659902</span>
+          <span>2026-03-25</span>
+        </div>
+      </div>
+      <div class="card-body" id="card-61">
+        <div class="transcript">hello who bob is this hey it&#x27;s lina from netsuite i know i&#x27;m calling a little bit out of the blue here so i&#x27;ll tell you why in thirty seconds then you can decide if you wanna continue is that cool i don&#x27;t understand you&#x27;re you&#x27;re calling what it&#x27;s breaking up bob i couldn&#x27;t hear you what did you say what you&#x27;re calling me because of what okay so we can find thousands of prospects who need branded merch for their upcoming trade shows using ai then we handle the outreach and book qualified sales meetings directly on your team&#x27;s calendar and right now we&#x27;re working with top promo companies like swag dot com merch dot com and helping our clients close fortune one hundred level so i just wanted to offer you a two week pilot yeah yeah yeah we&#x27;re not we&#x27;re not we&#x27;re not that we&#x27;re we&#x27;re not that big and we don&#x27;t go to trade shows we&#x27;re going to the big e because we&#x27;re going to introduce in late april our mini cakes but we do that at the show ourselves so is tomorrow good for a short demo so we&#x27;re not that big of a company alright okay i don&#x27;t think that would work for us but thank you very much sure boss you have a good day bye okay thank you okay bye bye hopefully we will be someday bye bye</div>
+      </div>
+    </div>
+    <div class="card" data-contact="francisca saterfield" data-company="odeecompany.com" data-transcript="hello hi francisca it&#x27;s lina from netflix i know i&#x27;m calling a little bit out of the blue here" data-date="2026-03-23">
+      <div class="card-header" onclick="toggleCard(62)">
+        <div class="card-title">
+          <span class="name">francisca saterfield</span>
+          <span class="badge">10s</span>
+        </div>
+        <div class="card-subtitle">CEO &middot; odeecompany.com</div>
+        <div class="card-meta">
+          <span>+12149521440</span>
+          <span>2026-03-23</span>
+        </div>
+      </div>
+      <div class="card-body" id="card-62">
+        <div class="transcript">hello hi francisca it&#x27;s lina from netflix i know i&#x27;m calling a little bit out of the blue here</div>
+      </div>
+    </div>
+    <div class="card" data-contact="gordon campbell" data-company="awardconcepts.net" data-transcript="hello hey gordon it&#x27;s lina from netflix i know i&#x27;m calling about as blue here so i&#x27;ll just tell you why in thirty seconds then you can decide if you wanna continue cool i don&#x27;t know what you&#x27;re saying it&#x27;s only a couple of things is your call breaking up i&#x27;m about to well what are you calling about so i&#x27;m calling from netsuite as i said and what we do is that we can find thousands of prospects who need branded merch for their upcoming trade shows using ai then we handle the outreach and book qualified sales meetings directly on your team&#x27;s calendar and right now we&#x27;re working with leaders like swag dot com merch dot com and helping our clients close fortune one hundred level so just wanted to offer you a two week pilot is monday good for a short demo i don&#x27;t know what you&#x27;re talking about i have no clue what you&#x27;re talking about i can&#x27;t hear you so i&#x27;m gonna hang up bye" data-date="2026-03-27">
+      <div class="card-header" onclick="toggleCard(63)">
+        <div class="card-title">
+          <span class="name">gordon campbell</span>
+          <span class="badge">67s</span>
+        </div>
+        <div class="card-subtitle">Correct Title &middot; awardconcepts.net</div>
+        <div class="card-meta">
+          <span>+16308870026</span>
+          <span>2026-03-27</span>
+        </div>
+      </div>
+      <div class="card-body" id="card-63">
+        <div class="transcript">hello hey gordon it&#x27;s lina from netflix i know i&#x27;m calling about as blue here so i&#x27;ll just tell you why in thirty seconds then you can decide if you wanna continue cool i don&#x27;t know what you&#x27;re saying it&#x27;s only a couple of things is your call breaking up i&#x27;m about to well what are you calling about so i&#x27;m calling from netsuite as i said and what we do is that we can find thousands of prospects who need branded merch for their upcoming trade shows using ai then we handle the outreach and book qualified sales meetings directly on your team&#x27;s calendar and right now we&#x27;re working with leaders like swag dot com merch dot com and helping our clients close fortune one hundred level so just wanted to offer you a two week pilot is monday good for a short demo i don&#x27;t know what you&#x27;re talking about i have no clue what you&#x27;re talking about i can&#x27;t hear you so i&#x27;m gonna hang up bye</div>
+      </div>
+    </div></div>
+  <div class="no-results" id="no-results" style="display:none">No matching transcripts found.</div>
+</div>
+<script>
+let allExpanded = false;
+function toggleCard(i) {
+  document.getElementById('card-'+i).classList.toggle('open');
+}
+function toggleAll() {
+  allExpanded = !allExpanded;
+  document.querySelectorAll('.card-body').forEach(b => {
+    b.classList.toggle('open', allExpanded);
+  });
+  document.querySelector('.expand-all').textContent = allExpanded ? 'Collapse All' : 'Expand All';
+}
+function filterCards(q) {
+  q = q.toLowerCase();
+  let visible = 0;
+  document.querySelectorAll('.card').forEach(c => {
+    const match = !q || c.dataset.contact.includes(q) || c.dataset.company.includes(q) || c.dataset.transcript.includes(q);
+    c.style.display = match ? '' : 'none';
+    if (match) visible++;
+  });
+  document.getElementById('count').textContent = 'Showing ' + visible + ' of 64 calls';
+  document.getElementById('no-results').style.display = visible ? 'none' : '';
+}
+function sortCards(by, btn) {
+  document.querySelectorAll('.sort-btn').forEach(b => b.classList.remove('active'));
+  btn.classList.add('active');
+  const container = document.getElementById('cards');
+  const cards = [...container.children];
+  cards.sort((a, b) => {
+    if (by === 'date') return b.dataset.date.localeCompare(a.dataset.date);
+    return a.dataset.contact.localeCompare(b.dataset.contact);
+  });
+  cards.forEach(c => container.appendChild(c));
+}
+</script>
+</body>
+</html>

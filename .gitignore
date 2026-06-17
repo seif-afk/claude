@@ -2,3 +2,5 @@ node_modules/
 dist/
 .env
 *.db
+recordings/
+reports/failed_connections_apr7_9_with_recordings.csv
